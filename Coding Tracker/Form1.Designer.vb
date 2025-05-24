@@ -108,7 +108,7 @@ Partial Class Form1
         Me.lblMaxBuildings.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMaxBuildings.Location = New System.Drawing.Point(947, 303)
         Me.lblMaxBuildings.Name = "lblMaxBuildings"
-        Me.lblMaxBuildings.Size = New System.Drawing.Size(118, 21)
+        Me.lblMaxBuildings.Size = New System.Drawing.Size(107, 16)
         Me.lblMaxBuildings.TabIndex = 8
         Me.lblMaxBuildings.Text = "Max Buildings:"
         '
@@ -119,7 +119,7 @@ Partial Class Form1
         Me.lblCityBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCityBudget.Location = New System.Drawing.Point(947, 274)
         Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(59, 21)
+        Me.lblCityBudget.Size = New System.Drawing.Size(56, 16)
         Me.lblCityBudget.TabIndex = 7
         Me.lblCityBudget.Text = "Budget"
         '
@@ -138,7 +138,7 @@ Partial Class Form1
         Me.lblCityType.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCityType.Location = New System.Drawing.Point(937, 199)
         Me.lblCityType.Name = "lblCityType"
-        Me.lblCityType.Size = New System.Drawing.Size(83, 21)
+        Me.lblCityType.Size = New System.Drawing.Size(77, 16)
         Me.lblCityType.TabIndex = 3
         Me.lblCityType.Text = "City Type:"
         '
@@ -212,9 +212,10 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
-        Me.pnlMapGrid.ResumeLayout(False)
-        Me.pnlMapGrid.PerformLayout()
+        Me.Text = "CITY MAP BUILDER"
+        Me.grpTools.ResumeLayout(False)
+        Me.grpProperties.ResumeLayout(False)
+        Me.grpProperties.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
