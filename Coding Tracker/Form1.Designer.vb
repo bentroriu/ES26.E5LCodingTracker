@@ -127,7 +127,7 @@ Partial Class Form1
         Me.lblMaxBuildings.AutoSize = True
         Me.lblMaxBuildings.Location = New System.Drawing.Point(25, 238)
         Me.lblMaxBuildings.Name = "lblMaxBuildings"
-        Me.lblMaxBuildings.Size = New System.Drawing.Size(93, 16)
+        Me.lblMaxBuildings.Size = New System.Drawing.Size(107, 16)
         Me.lblMaxBuildings.TabIndex = 8
         Me.lblMaxBuildings.Text = "Max Buildings:"
         '
@@ -136,7 +136,7 @@ Partial Class Form1
         Me.lblCityBudget.AutoSize = True
         Me.lblCityBudget.Location = New System.Drawing.Point(25, 209)
         Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(50, 16)
+        Me.lblCityBudget.Size = New System.Drawing.Size(56, 16)
         Me.lblCityBudget.TabIndex = 7
         Me.lblCityBudget.Text = "Budget"
         '
@@ -153,7 +153,7 @@ Partial Class Form1
         Me.lblCityType.AutoSize = True
         Me.lblCityType.Location = New System.Drawing.Point(15, 134)
         Me.lblCityType.Name = "lblCityType"
-        Me.lblCityType.Size = New System.Drawing.Size(67, 16)
+        Me.lblCityType.Size = New System.Drawing.Size(77, 16)
         Me.lblCityType.TabIndex = 3
         Me.lblCityType.Text = "City Type:"
         '
@@ -222,7 +222,7 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "CITY MAP BUILDER"
         Me.grpTools.ResumeLayout(False)
         Me.grpProperties.ResumeLayout(False)
         Me.grpProperties.PerformLayout()
