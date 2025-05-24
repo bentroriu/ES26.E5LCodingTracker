@@ -90,7 +90,7 @@ Public Class Form1
 
         Dim g As Graphics = pnlMapGrid.CreateGraphics()
 
-        If selectedTool = "road" Then
+        If selectedTool <> "road" Then
             g.FillRectangle(Brushes.LightGray, e.X, e.Y, 30, 30)
             g.DrawString(selectedTool.Substring(0, 1), Me.Font, Brushes.Black, e.X + 5, e.Y + 5)
         End If
@@ -167,7 +167,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnMenu.Click
         Form2.Show()
     End Sub
 
