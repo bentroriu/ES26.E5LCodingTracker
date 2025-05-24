@@ -14,6 +14,9 @@ Public Class Form1
     Dim totalPower As Double = 0
     Dim selectedTool As String = ""
     Dim isSandboxMode As Boolean = False
+    Private Buildings As New List(Of Rectangle)
+    Private Powerlines As New List(Of Rectangle)
+    Private Bridges As New List(Of Rectangle)
 
     Private citySettings As New Dictionary(Of String, (budget As Double, maxBuildings As Integer)) From {
         {"Small Town", (100000, 5)},
@@ -43,7 +46,11 @@ Public Class Form1
     End Sub
 
     Private Sub pnlMapGrid_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMapGrid.MouseClick
-        ' Ignore clicks on the controls inside the PictureBox
+        ' Ignore clicks on the controls inside the PictureBoxen
+        If selectedTool = "" Then
+            MsgBox("Please select a tool from the left side", vbExclamation, "No Tool Selected.")
+            Exit Sub
+        End If
         For Each ctrl As Control In pnlMapGrid.Controls
             If ctrl.Bounds.Contains(e.Location) Then Exit Sub
         Next
@@ -53,11 +60,12 @@ Public Class Form1
 
         Select Case selectedTool
             Case "Road"
-                cost = 5000
+
                 If e.Button = MouseButtons.Left Then
                     If Not drawingRoad Then
                         RoadStart = e.Location
                         drawingRoad = True
+                        cost = 5000
                     Else
                         Roads.Add(Tuple.Create(RoadStart, e.Location))
                         UpdateUndoButtonState()
@@ -68,11 +76,20 @@ Public Class Form1
                 End If
             Case "Bridge"
                 cost = 15000
+                Dim bridgesRect As New Rectangle(e.X - 10, e.Y - 5, 50, 50)
+                Bridges.Add(bridgesRect)
+                pnlMapGrid.Invalidate()
             Case "Building"
                 cost = 20000
                 powerUse = 300
+                Dim buildingsRect As New Rectangle(e.X - 10, e.Y - 5, 50, 50)
+                Buildings.Add(buildingsRect)
+                pnlMapGrid.Invalidate()
             Case "PowerLine"
                 cost = 10000
+                Dim powerlinesRect As New Rectangle(e.X - 10, e.Y - 5, 50, 50)
+                Powerlines.Add(powerlinesRect)
+                pnlMapGrid.Invalidate()
         End Select
 
         If Not isSandboxMode AndAlso budget < cost Then
@@ -88,12 +105,7 @@ Public Class Form1
         totalPower += powerUse
         lblPower.Text = "Total Power: " & totalPower.ToString("F0") & " W"
 
-        Dim g As Graphics = pnlMapGrid.CreateGraphics()
 
-        If selectedTool <> "road" Then
-            g.FillRectangle(Brushes.LightGray, e.X, e.Y, 30, 30)
-            g.DrawString(selectedTool.Substring(0, 1), Me.Font, Brushes.Black, e.X + 5, e.Y + 5)
-        End If
 
     End Sub
     Private Function GetLineBoundingBox(p1 As Point, p2 As Point) As Rectangle
@@ -119,7 +131,6 @@ Public Class Form1
     Private Sub pnlmapgrid_Paint(sender As Object, e As PaintEventArgs) Handles pnlMapGrid.Paint
         Dim RoadPen As New Pen(Color.DarkGray, 40)
         Dim previewPen As New Pen(Color.Yellow, 40)
-
         For Each Road In Roads
             e.Graphics.DrawLine(RoadPen, Road.Item1, Road.Item2)
         Next
@@ -127,6 +138,21 @@ Public Class Form1
         If drawingRoad Then
             e.Graphics.DrawLine(previewPen, RoadStart, RoadPreviewEnd)
         End If
+
+        For Each rect In Bridges
+            e.Graphics.FillRectangle(Brushes.Yellow, rect)
+            e.Graphics.DrawRectangle(Pens.Black, rect)
+        Next
+        For Each rect In Buildings
+            e.Graphics.FillRectangle(Brushes.Blue, rect)
+            e.Graphics.DrawRectangle(Pens.Black, rect)
+        Next
+
+        For Each rect In Powerlines
+            e.Graphics.FillRectangle(Brushes.Red, rect)
+            e.Graphics.DrawRectangle(Pens.Black, rect)
+        Next
+
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -135,8 +161,12 @@ Public Class Form1
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
         Roads.Clear()          ' Remove all saved Roads
+        Powerlines.Clear()     ' Remove all saved elements
+        Buildings.Clear()
+        Bridges.Clear()
         drawingRoad = False    ' Cancel any in-progress Road
         pnlMapGrid.Invalidate()
+
 
     End Sub
 
@@ -149,7 +179,22 @@ Public Class Form1
         Dim cityData = citySettings(selected)
 
         lblCityBudget.Text = "Budget: ₱" & cityData.budget.ToString("N0")
+        lblBudget.Text = "Budget: ₱" & cityData.budget.ToString("N0")
         lblMaxBuildings.Text = "Max Buildings: " & cityData.maxBuildings
+        Roads.Clear()          ' Remove all saved Roads
+        Powerlines.Clear()     ' Remove all saved elements
+        Buildings.Clear()
+        Bridges.Clear()
+        drawingRoad = False    ' Cancel any in-progress Road
+        pnlMapGrid.Invalidate()
+        Select Case cmbCityType.SelectedIndex
+            Case 0
+                budget = 100000
+            Case 1
+                budget = 250000
+            Case 2
+                budget = 500000
+        End Select
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -157,7 +202,7 @@ Public Class Form1
         cmbMode.Items.Add("Sandbox Mode")
         cmbMode.SelectedIndex = 0
         UpdateUndoButtonState()
-        lblCityBudget.Text = "Budget: ₱" & budget.ToString("N2")
+        lblCityBudget.Text = "Budget: ₱" & budget.ToString("N0")
         lblPower.Text = "Total Power: 0 W"
 
         cmbCityType.Items.AddRange(citySettings.Keys.ToArray())
@@ -177,6 +222,8 @@ Public Class Form1
             pnlMapGrid.Invalidate()         ' Redraw the panel
         End If
         Call UpdateUndoButtonState()
+        budget += 5000 'reverse road spending
+        lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
     End Sub
     Private Sub UpdateUndoButtonState()
         btnUndo.Enabled = Roads.Count > 0
