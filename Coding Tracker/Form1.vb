@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
-Public Class Form1
 
+Public Class Form1
 
     Private budget As Double = 100000
     Private buildingCount As Integer = 0
@@ -10,13 +10,12 @@ Public Class Form1
     Dim isSandboxMode As Boolean = False
 
     Private citySettings As New Dictionary(Of String, (budget As Double, maxBuildings As Integer)) From {
-    {"Small Town", (100000, 5)},
-    {"City", (250000, 10)},
-    {"Metro City", (500000, 20)}
-}
+        {"Small Town", (100000, 5)},
+        {"City", (250000, 10)},
+        {"Metro City", (500000, 20)}
+    }
 
-
-
+    ' Handlers for tool buttons now inside PictureBox (same names)
     Private Sub btnRoad_Click(sender As Object, e As EventArgs) Handles btnRoad.Click
         selectedTool = "Road"
     End Sub
@@ -38,6 +37,11 @@ Public Class Form1
     End Sub
 
     Private Sub pnlMapGrid_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMapGrid.MouseClick
+        ' Ignore clicks on the controls inside the PictureBox
+        For Each ctrl As Control In pnlMapGrid.Controls
+            If ctrl.Bounds.Contains(e.Location) Then Exit Sub
+        Next
+
         Dim cost As Double = 0
         Dim powerUse As Double = 0
 
@@ -48,7 +52,7 @@ Public Class Form1
                 cost = 15000
             Case "Building"
                 cost = 20000
-                powerUse = 300 ' watts
+                powerUse = 300
             Case "PowerLine"
                 cost = 10000
         End Select
@@ -66,7 +70,6 @@ Public Class Form1
         totalPower += powerUse
         lblPower.Text = "Total Power: " & totalPower.ToString("F0") & " W"
 
-        ' Simple visualization: draw rectangle
         Dim g As Graphics = pnlMapGrid.CreateGraphics()
         g.FillRectangle(Brushes.LightGray, e.X, e.Y, 30, 30)
         g.DrawString(selectedTool.Substring(0, 1), Me.Font, Brushes.Black, e.X + 5, e.Y + 5)
@@ -77,14 +80,12 @@ Public Class Form1
         totalPower = 0
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
-        pnlMapGrid.Invalidate() ' Clears drawing
+        pnlMapGrid.Invalidate()
     End Sub
 
     Private Sub btnSimulate_Click(sender As Object, e As EventArgs) Handles btnSimulate.Click
         MessageBox.Show("Simulation complete!" & vbCrLf & "Total Power: " & totalPower & " W")
     End Sub
-
-
 
     Private Sub cmbCityType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCityType.SelectedIndexChanged
         Dim selected = cmbCityType.SelectedItem.ToString()
@@ -99,19 +100,11 @@ Public Class Form1
         cmbMode.Items.Add("Sandbox Mode")
         cmbMode.SelectedIndex = 0
 
-        lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
+        lblCityBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
 
-        ' Existing mode code here...
-
-        ' Add new city types to ComboBox
         cmbCityType.Items.AddRange(citySettings.Keys.ToArray())
-        cmbCityType.SelectedIndex = 0 ' Default
+        cmbCityType.SelectedIndex = 0
     End Sub
 
-
-
-
-
 End Class
-
