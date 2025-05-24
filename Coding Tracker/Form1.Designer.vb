@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.pnlMapGrid = New System.Windows.Forms.Panel()
@@ -127,7 +127,7 @@ Partial Class Form1
         Me.lblMaxBuildings.AutoSize = True
         Me.lblMaxBuildings.Location = New System.Drawing.Point(25, 238)
         Me.lblMaxBuildings.Name = "lblMaxBuildings"
-        Me.lblMaxBuildings.Size = New System.Drawing.Size(107, 16)
+        Me.lblMaxBuildings.Size = New System.Drawing.Size(93, 16)
         Me.lblMaxBuildings.TabIndex = 8
         Me.lblMaxBuildings.Text = "Max Buildings:"
         '
@@ -136,13 +136,12 @@ Partial Class Form1
         Me.lblCityBudget.AutoSize = True
         Me.lblCityBudget.Location = New System.Drawing.Point(25, 209)
         Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(56, 16)
+        Me.lblCityBudget.Size = New System.Drawing.Size(50, 16)
         Me.lblCityBudget.TabIndex = 7
         Me.lblCityBudget.Text = "Budget"
         '
         'cmbCityType
         '
-        Me.cmbCityType.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbCityType.FormattingEnabled = True
         Me.cmbCityType.Location = New System.Drawing.Point(66, 166)
         Me.cmbCityType.Name = "cmbCityType"
@@ -154,7 +153,7 @@ Partial Class Form1
         Me.lblCityType.AutoSize = True
         Me.lblCityType.Location = New System.Drawing.Point(15, 134)
         Me.lblCityType.Name = "lblCityType"
-        Me.lblCityType.Size = New System.Drawing.Size(77, 16)
+        Me.lblCityType.Size = New System.Drawing.Size(67, 16)
         Me.lblCityType.TabIndex = 3
         Me.lblCityType.Text = "City Type:"
         '
@@ -223,7 +222,7 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CITY MAP BUILDER"
+        Me.Text = "Form1"
         Me.grpTools.ResumeLayout(False)
         Me.grpProperties.ResumeLayout(False)
         Me.grpProperties.PerformLayout()
