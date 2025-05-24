@@ -62,7 +62,7 @@ Partial Class Form1
         Me.pnlMapGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlMapGrid.Location = New System.Drawing.Point(0, 0)
         Me.pnlMapGrid.Name = "pnlMapGrid"
-        Me.pnlMapGrid.Size = New System.Drawing.Size(1180, 538)
+        Me.pnlMapGrid.Size = New System.Drawing.Size(1300, 620)
         Me.pnlMapGrid.TabIndex = 0
         '
         'lblMaxBuildings
@@ -206,7 +206,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1180, 538)
+        Me.ClientSize = New System.Drawing.Size(1300, 620)
         Me.Controls.Add(Me.pnlMapGrid)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -214,6 +214,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CITY MAP BUILDER"
+        Me.TopMost = True
         Me.pnlMapGrid.ResumeLayout(False)
         Me.pnlMapGrid.PerformLayout()
         Me.ResumeLayout(False)
