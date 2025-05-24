@@ -87,6 +87,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interface1.vb" />
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>

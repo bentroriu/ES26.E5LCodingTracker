@@ -24,20 +24,20 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.pnlMapGrid = New System.Windows.Forms.Panel()
-        Me.btnPowerLine = New System.Windows.Forms.Button()
-        Me.btnBuilding = New System.Windows.Forms.Button()
-        Me.btnBridge = New System.Windows.Forms.Button()
-        Me.btnRoad = New System.Windows.Forms.Button()
         Me.lblMaxBuildings = New System.Windows.Forms.Label()
+        Me.btnPowerLine = New System.Windows.Forms.Button()
         Me.lblCityBudget = New System.Windows.Forms.Label()
+        Me.btnBridge = New System.Windows.Forms.Button()
         Me.cmbCityType = New System.Windows.Forms.ComboBox()
+        Me.btnBuilding = New System.Windows.Forms.Button()
         Me.lblCityType = New System.Windows.Forms.Label()
+        Me.btnRoad = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
+        Me.lblBudget = New System.Windows.Forms.Label()
         Me.btnSimulate = New System.Windows.Forms.Button()
+        Me.lblPower = New System.Windows.Forms.Label()
         Me.cmbMode = New System.Windows.Forms.ComboBox()
         Me.lblMode = New System.Windows.Forms.Label()
-        Me.lblPower = New System.Windows.Forms.Label()
-        Me.lblBudget = New System.Windows.Forms.Label()
         Me.pnlMapGrid.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,6 +65,17 @@ Partial Class Form1
         Me.pnlMapGrid.Size = New System.Drawing.Size(1180, 538)
         Me.pnlMapGrid.TabIndex = 0
         '
+        'lblMaxBuildings
+        '
+        Me.lblMaxBuildings.AutoSize = True
+        Me.lblMaxBuildings.BackColor = System.Drawing.Color.Transparent
+        Me.lblMaxBuildings.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMaxBuildings.Location = New System.Drawing.Point(947, 303)
+        Me.lblMaxBuildings.Name = "lblMaxBuildings"
+        Me.lblMaxBuildings.Size = New System.Drawing.Size(118, 21)
+        Me.lblMaxBuildings.TabIndex = 8
+        Me.lblMaxBuildings.Text = "Max Buildings:"
+        '
         'btnPowerLine
         '
         Me.btnPowerLine.Location = New System.Drawing.Point(52, 296)
@@ -74,14 +85,16 @@ Partial Class Form1
         Me.btnPowerLine.Text = "Powerline"
         Me.btnPowerLine.UseVisualStyleBackColor = True
         '
-        'btnBuilding
+        'lblCityBudget
         '
-        Me.btnBuilding.Location = New System.Drawing.Point(52, 254)
-        Me.btnBuilding.Name = "btnBuilding"
-        Me.btnBuilding.Size = New System.Drawing.Size(127, 36)
-        Me.btnBuilding.TabIndex = 5
-        Me.btnBuilding.Text = "Building"
-        Me.btnBuilding.UseVisualStyleBackColor = True
+        Me.lblCityBudget.AutoSize = True
+        Me.lblCityBudget.BackColor = System.Drawing.Color.Transparent
+        Me.lblCityBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCityBudget.Location = New System.Drawing.Point(947, 274)
+        Me.lblCityBudget.Name = "lblCityBudget"
+        Me.lblCityBudget.Size = New System.Drawing.Size(59, 21)
+        Me.lblCityBudget.TabIndex = 7
+        Me.lblCityBudget.Text = "Budget"
         '
         'btnBridge
         '
@@ -92,37 +105,6 @@ Partial Class Form1
         Me.btnBridge.Text = "Bridge"
         Me.btnBridge.UseVisualStyleBackColor = True
         '
-        'btnRoad
-        '
-        Me.btnRoad.Location = New System.Drawing.Point(52, 170)
-        Me.btnRoad.Name = "btnRoad"
-        Me.btnRoad.Size = New System.Drawing.Size(127, 36)
-        Me.btnRoad.TabIndex = 3
-        Me.btnRoad.Text = "Road"
-        Me.btnRoad.UseVisualStyleBackColor = True
-        '
-        'lblMaxBuildings
-        '
-        Me.lblMaxBuildings.AutoSize = True
-        Me.lblMaxBuildings.BackColor = System.Drawing.Color.Transparent
-        Me.lblMaxBuildings.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMaxBuildings.Location = New System.Drawing.Point(947, 303)
-        Me.lblMaxBuildings.Name = "lblMaxBuildings"
-        Me.lblMaxBuildings.Size = New System.Drawing.Size(107, 16)
-        Me.lblMaxBuildings.TabIndex = 8
-        Me.lblMaxBuildings.Text = "Max Buildings:"
-        '
-        'lblCityBudget
-        '
-        Me.lblCityBudget.AutoSize = True
-        Me.lblCityBudget.BackColor = System.Drawing.Color.Transparent
-        Me.lblCityBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityBudget.Location = New System.Drawing.Point(947, 274)
-        Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(56, 16)
-        Me.lblCityBudget.TabIndex = 7
-        Me.lblCityBudget.Text = "Budget"
-        '
         'cmbCityType
         '
         Me.cmbCityType.FormattingEnabled = True
@@ -131,6 +113,15 @@ Partial Class Form1
         Me.cmbCityType.Size = New System.Drawing.Size(145, 24)
         Me.cmbCityType.TabIndex = 6
         '
+        'btnBuilding
+        '
+        Me.btnBuilding.Location = New System.Drawing.Point(52, 254)
+        Me.btnBuilding.Name = "btnBuilding"
+        Me.btnBuilding.Size = New System.Drawing.Size(127, 36)
+        Me.btnBuilding.TabIndex = 5
+        Me.btnBuilding.Text = "Building"
+        Me.btnBuilding.UseVisualStyleBackColor = True
+        '
         'lblCityType
         '
         Me.lblCityType.AutoSize = True
@@ -138,9 +129,18 @@ Partial Class Form1
         Me.lblCityType.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCityType.Location = New System.Drawing.Point(937, 199)
         Me.lblCityType.Name = "lblCityType"
-        Me.lblCityType.Size = New System.Drawing.Size(77, 16)
+        Me.lblCityType.Size = New System.Drawing.Size(83, 21)
         Me.lblCityType.TabIndex = 3
         Me.lblCityType.Text = "City Type:"
+        '
+        'btnRoad
+        '
+        Me.btnRoad.Location = New System.Drawing.Point(52, 170)
+        Me.btnRoad.Name = "btnRoad"
+        Me.btnRoad.Size = New System.Drawing.Size(127, 36)
+        Me.btnRoad.TabIndex = 3
+        Me.btnRoad.Text = "Road"
+        Me.btnRoad.UseVisualStyleBackColor = True
         '
         'btnReset
         '
@@ -151,6 +151,17 @@ Partial Class Form1
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
+        'lblBudget
+        '
+        Me.lblBudget.AutoSize = True
+        Me.lblBudget.BackColor = System.Drawing.Color.Transparent
+        Me.lblBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBudget.Location = New System.Drawing.Point(937, 96)
+        Me.lblBudget.Name = "lblBudget"
+        Me.lblBudget.Size = New System.Drawing.Size(63, 21)
+        Me.lblBudget.TabIndex = 0
+        Me.lblBudget.Text = "Budget:"
+        '
         'btnSimulate
         '
         Me.btnSimulate.Location = New System.Drawing.Point(979, 337)
@@ -159,6 +170,17 @@ Partial Class Form1
         Me.btnSimulate.TabIndex = 4
         Me.btnSimulate.Text = "Simulate"
         Me.btnSimulate.UseVisualStyleBackColor = True
+        '
+        'lblPower
+        '
+        Me.lblPower.AutoSize = True
+        Me.lblPower.BackColor = System.Drawing.Color.Transparent
+        Me.lblPower.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPower.Location = New System.Drawing.Point(937, 129)
+        Me.lblPower.Name = "lblPower"
+        Me.lblPower.Size = New System.Drawing.Size(99, 21)
+        Me.lblPower.TabIndex = 1
+        Me.lblPower.Text = "Total Power:"
         '
         'cmbMode
         '
@@ -180,43 +202,20 @@ Partial Class Form1
         Me.lblMode.TabIndex = 2
         Me.lblMode.Text = "Mode:"
         '
-        'lblPower
-        '
-        Me.lblPower.AutoSize = True
-        Me.lblPower.BackColor = System.Drawing.Color.Transparent
-        Me.lblPower.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPower.Location = New System.Drawing.Point(937, 129)
-        Me.lblPower.Name = "lblPower"
-        Me.lblPower.Size = New System.Drawing.Size(99, 21)
-        Me.lblPower.TabIndex = 1
-        Me.lblPower.Text = "Total Power:"
-        '
-        'lblBudget
-        '
-        Me.lblBudget.AutoSize = True
-        Me.lblBudget.BackColor = System.Drawing.Color.Transparent
-        Me.lblBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBudget.Location = New System.Drawing.Point(937, 96)
-        Me.lblBudget.Name = "lblBudget"
-        Me.lblBudget.Size = New System.Drawing.Size(63, 21)
-        Me.lblBudget.TabIndex = 0
-        Me.lblBudget.Text = "Budget:"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1180, 538)
         Me.Controls.Add(Me.pnlMapGrid)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CITY MAP BUILDER"
-        Me.grpTools.ResumeLayout(False)
-        Me.grpProperties.ResumeLayout(False)
-        Me.grpProperties.PerformLayout()
+        Me.pnlMapGrid.ResumeLayout(False)
+        Me.pnlMapGrid.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
