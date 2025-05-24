@@ -26,23 +26,25 @@ Partial Class Form2
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(621, 149)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.Location = New System.Drawing.Point(605, 183)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(289, 92)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "START"
+        Me.Button1.Text = "PLAY"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
@@ -50,7 +52,7 @@ Partial Class Form2
         Me.Button2.BackColor = System.Drawing.Color.DarkGray
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(621, 247)
+        Me.Button2.Location = New System.Drawing.Point(958, 183)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(289, 92)
         Me.Button2.TabIndex = 5
@@ -62,12 +64,33 @@ Partial Class Form2
         Me.Button3.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(621, 345)
+        Me.Button3.Location = New System.Drawing.Point(605, 345)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(289, 92)
         Me.Button3.TabIndex = 6
         Me.Button3.Text = "ABOUT"
         Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(958, 345)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(289, 92)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "EXIT"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'AxWindowsMediaPlayer1
+        '
+        Me.AxWindowsMediaPlayer1.Enabled = True
+        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(473, 26)
+        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
+        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(265, 121)
+        Me.AxWindowsMediaPlayer1.TabIndex = 8
         '
         'PictureBox1
         '
@@ -80,24 +103,13 @@ Partial Class Form2
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(621, 443)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(289, 92)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "EXIT"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
         'Form2
         '
         Me.AcceptButton = Me.Button1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1300, 620)
+        Me.Controls.Add(Me.AxWindowsMediaPlayer1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -110,9 +122,8 @@ Partial Class Form2
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CITY MAP BUILDER"
         Me.TopMost = True
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -121,4 +132,5 @@ Partial Class Form2
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
 End Class
