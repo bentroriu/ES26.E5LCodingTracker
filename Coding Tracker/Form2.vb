@@ -6,6 +6,8 @@ Public Class Form2
 
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim player As New System.Media.SoundPlayer(My.Resources.THEMESONG)
+        player.PlayLooping()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -28,16 +30,5 @@ Public Class Form2
         If MessageBox.Show("Are you sure you want to exit?", "Exit?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = vbYes Then End
 
     End Sub
-
-
-    Private Sub PlayEmbeddedMusic()
-        Dim tempPath As String = Path.Combine(Path.GetTempPath(), "BG MUSIC.wav")
-        Dim stream As IO.UnmanagedMemoryStream = My.Resources.THEMESONG
-        Dim song(stream.Length - 1) As Byte
-        stream.Read(song, 0, stream.Length)
-        File.WriteAllBytes(tempPath, song) ' Use your resource name here
-    End Sub
-
-
 
 End Class
