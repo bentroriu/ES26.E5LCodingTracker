@@ -26,12 +26,15 @@ Public Class Form2
 
 
     Private Sub PlayEmbeddedMusic()
-        Dim tempPath As String = Path.Combine(Path.GetTempPath(), "themesong.mp3")
-        Dim song As Byte = My.Resources.THEMESONG
-        File.WriteAllBytes(tempPath, My.Resources.) ' Use your resource name here
+        Dim tempPath As String = Path.Combine(Path.GetTempPath(), "BG MUSIC.wav")
+        Dim stream As IO.UnmanagedMemoryStream = My.Resources.THEMESONG
+        Dim song(stream.Length - 1) As Byte
+        stream.Read(song, 0, stream.Length)
+        File.WriteAllBytes(tempPath, song) ' Use your resource name here
         AxWindowsMediaPlayer1.URL = tempPath
         AxWindowsMediaPlayer1.settings.setMode("loop", True) ' Optional loop
         AxWindowsMediaPlayer1.Ctlcontrols.play()
+        AxWindowsMediaPlayer1.Visible = False
     End Sub
 
 
