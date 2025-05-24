@@ -2,6 +2,7 @@
 
 Public Class Form1
 
+
     Private budget As Double = 100000
     Private buildingCount As Integer = 0
     Private buildingLimit As Integer = 0

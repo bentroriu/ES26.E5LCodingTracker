@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EB79E3FF-0CD4-4DB2-8367-16B1D22F2377}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Coding_Tracker.My.MyApplication</StartupObject>
+    <StartupObject>Coding_Tracker.Form2</StartupObject>
     <RootNamespace>Coding_Tracker</RootNamespace>
     <AssemblyName>Coding Tracker</AssemblyName>
     <FileAlignment>512</FileAlignment>
