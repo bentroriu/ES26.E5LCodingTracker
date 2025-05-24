@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.pnlMapGrid = New System.Windows.Forms.Panel()
         Me.grpTools = New System.Windows.Forms.GroupBox()
         Me.btnPowerLine = New System.Windows.Forms.Button()
@@ -57,6 +58,7 @@ Partial Class Form1
         Me.grpTools.Controls.Add(Me.btnBuilding)
         Me.grpTools.Controls.Add(Me.btnBridge)
         Me.grpTools.Controls.Add(Me.btnRoad)
+        Me.grpTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpTools.Location = New System.Drawing.Point(2, 147)
         Me.grpTools.Name = "grpTools"
         Me.grpTools.Size = New System.Drawing.Size(181, 253)
@@ -112,6 +114,7 @@ Partial Class Form1
         Me.grpProperties.Controls.Add(Me.lblMode)
         Me.grpProperties.Controls.Add(Me.lblPower)
         Me.grpProperties.Controls.Add(Me.lblBudget)
+        Me.grpProperties.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpProperties.Location = New System.Drawing.Point(939, 66)
         Me.grpProperties.Name = "grpProperties"
         Me.grpProperties.Size = New System.Drawing.Size(236, 398)
@@ -156,7 +159,7 @@ Partial Class Form1
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(34, 334)
+        Me.btnReset.Location = New System.Drawing.Point(57, 325)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(127, 36)
         Me.btnReset.TabIndex = 5
@@ -165,7 +168,7 @@ Partial Class Form1
         '
         'btnSimulate
         '
-        Me.btnSimulate.Location = New System.Drawing.Point(34, 292)
+        Me.btnSimulate.Location = New System.Drawing.Point(57, 272)
         Me.btnSimulate.Name = "btnSimulate"
         Me.btnSimulate.Size = New System.Drawing.Size(127, 36)
         Me.btnSimulate.TabIndex = 4
@@ -174,6 +177,7 @@ Partial Class Form1
         '
         'cmbMode
         '
+        Me.cmbMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMode.FormattingEnabled = True
         Me.cmbMode.Location = New System.Drawing.Point(66, 93)
         Me.cmbMode.Name = "cmbMode"
@@ -185,7 +189,7 @@ Partial Class Form1
         Me.lblMode.AutoSize = True
         Me.lblMode.Location = New System.Drawing.Point(15, 96)
         Me.lblMode.Name = "lblMode"
-        Me.lblMode.Size = New System.Drawing.Size(45, 16)
+        Me.lblMode.Size = New System.Drawing.Size(50, 16)
         Me.lblMode.TabIndex = 2
         Me.lblMode.Text = "Mode:"
         '
@@ -194,7 +198,7 @@ Partial Class Form1
         Me.lblPower.AutoSize = True
         Me.lblPower.Location = New System.Drawing.Point(15, 64)
         Me.lblPower.Name = "lblPower"
-        Me.lblPower.Size = New System.Drawing.Size(82, 16)
+        Me.lblPower.Size = New System.Drawing.Size(94, 16)
         Me.lblPower.TabIndex = 1
         Me.lblPower.Text = "Total Power:"
         '
@@ -203,7 +207,7 @@ Partial Class Form1
         Me.lblBudget.AutoSize = True
         Me.lblBudget.Location = New System.Drawing.Point(15, 31)
         Me.lblBudget.Name = "lblBudget"
-        Me.lblBudget.Size = New System.Drawing.Size(53, 16)
+        Me.lblBudget.Size = New System.Drawing.Size(60, 16)
         Me.lblBudget.TabIndex = 0
         Me.lblBudget.Text = "Budget:"
         '
@@ -215,6 +219,7 @@ Partial Class Form1
         Me.Controls.Add(Me.grpProperties)
         Me.Controls.Add(Me.grpTools)
         Me.Controls.Add(Me.pnlMapGrid)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
