@@ -36,11 +36,6 @@ Public Class Form2
         Dim song(stream.Length - 1) As Byte
         stream.Read(song, 0, stream.Length)
         File.WriteAllBytes(tempPath, song) ' Use your resource name here
-        AxWindowsMediaPlayer1.URl = tempPath
-        AxWindowsMediaPlayer1.settings.setMode("loop"; True)
-        AxWindowsMediaPlayer1.Ctlcontrols.play()
-        AxWindowsMediaPlayer1.Visible = False
-
     End Sub
 
 

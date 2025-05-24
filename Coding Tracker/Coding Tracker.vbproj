@@ -174,5 +174,8 @@
   <ItemGroup>
     <None Include="Resources\ENSC 26 GANTT CHART-Photoroom.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
