@@ -56,6 +56,7 @@ Partial Class Form3
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About"
+        Me.TopMost = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

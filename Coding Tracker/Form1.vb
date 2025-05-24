@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports System.IO
 
 Public Class Form1
 
@@ -6,6 +7,10 @@ Public Class Form1
     Private budget As Double = 100000
     Private buildingCount As Integer = 0
     Private buildingLimit As Integer = 0
+    Private drawingRoad As Boolean = False
+    Private RoadStart As Point
+    Private RoadPreviewEnd As Point
+    Private Roads As New List(Of Tuple(Of Point, Point))
     Dim totalPower As Double = 0
     Dim selectedTool As String = ""
     Dim isSandboxMode As Boolean = False
@@ -49,6 +54,18 @@ Public Class Form1
         Select Case selectedTool
             Case "Road"
                 cost = 5000
+                If e.Button = MouseButtons.Left Then
+                    If Not drawingRoad Then
+                        RoadStart = e.Location
+                        drawingRoad = True
+                    Else
+                        Roads.Add(Tuple.Create(RoadStart, e.Location))
+                        UpdateUndoButtonState()
+                        drawingRoad = False
+                        pnlMapGrid.Invalidate()
+                    End If
+
+                End If
             Case "Bridge"
                 cost = 15000
             Case "Building"
@@ -72,8 +89,44 @@ Public Class Form1
         lblPower.Text = "Total Power: " & totalPower.ToString("F0") & " W"
 
         Dim g As Graphics = pnlMapGrid.CreateGraphics()
-        g.FillRectangle(Brushes.LightGray, e.X, e.Y, 30, 30)
-        g.DrawString(selectedTool.Substring(0, 1), Me.Font, Brushes.Black, e.X + 5, e.Y + 5)
+
+        If selectedTool = "road" Then
+            g.FillRectangle(Brushes.LightGray, e.X, e.Y, 30, 30)
+            g.DrawString(selectedTool.Substring(0, 1), Me.Font, Brushes.Black, e.X + 5, e.Y + 5)
+        End If
+
+    End Sub
+    Private Function GetLineBoundingBox(p1 As Point, p2 As Point) As Rectangle
+        Dim padding As Integer = 22 ' Extra space for thick pen
+        Dim left As Integer = Math.Min(p1.X, p2.X) - padding
+        Dim top As Integer = Math.Min(p1.Y, p2.Y) - padding
+        Dim width As Integer = Math.Abs(p1.X - p2.X) + padding * 2
+        Dim height As Integer = Math.Abs(p1.Y - p2.Y) + padding * 2
+        Return New Rectangle(left, top, width, height)
+    End Function
+
+    Private Sub pnlmapgrid_MouseMove(sender As Object, e As MouseEventArgs) Handles pnlMapGrid.MouseMove
+        If drawingRoad Then
+            Dim oldRect As Rectangle = GetLineBoundingBox(RoadStart, RoadPreviewEnd)
+            ' Update the preview endpoint
+            RoadPreviewEnd = e.Location
+            ' Store the new preview line area
+            Dim newRect As Rectangle = GetLineBoundingBox(RoadStart, RoadPreviewEnd)
+            ' Invalidate both old and new areas to avoid ghosting
+            pnlMapGrid.Invalidate(Rectangle.Union(oldRect, newRect))
+        End If
+    End Sub
+    Private Sub pnlmapgrid_Paint(sender As Object, e As PaintEventArgs) Handles pnlMapGrid.Paint
+        Dim RoadPen As New Pen(Color.DarkGray, 40)
+        Dim previewPen As New Pen(Color.Yellow, 40)
+
+        For Each Road In Roads
+            e.Graphics.DrawLine(RoadPen, Road.Item1, Road.Item2)
+        Next
+
+        If drawingRoad Then
+            e.Graphics.DrawLine(previewPen, RoadStart, RoadPreviewEnd)
+        End If
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -81,7 +134,10 @@ Public Class Form1
         totalPower = 0
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
+        Roads.Clear()          ' Remove all saved Roads
+        drawingRoad = False    ' Cancel any in-progress Road
         pnlMapGrid.Invalidate()
+
     End Sub
 
     Private Sub btnSimulate_Click(sender As Object, e As EventArgs) Handles btnSimulate.Click
@@ -100,7 +156,7 @@ Public Class Form1
         cmbMode.Items.Add("Constrained Mode")
         cmbMode.Items.Add("Sandbox Mode")
         cmbMode.SelectedIndex = 0
-
+        UpdateUndoButtonState()
         lblCityBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
 
@@ -109,6 +165,21 @@ Public Class Form1
 
         Form2.Show()
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form2.Show()
+    End Sub
+
+    Private Sub btnUndo_Click(sender As Object, e As EventArgs) Handles btnUndo.Click
+        If Roads.Count > 0 Then
+            Roads.RemoveAt(Roads.Count - 1)  ' Remove the most recent road
+            pnlMapGrid.Invalidate()         ' Redraw the panel
+        End If
+        Call UpdateUndoButtonState()
+    End Sub
+    Private Sub UpdateUndoButtonState()
+        btnUndo.Enabled = Roads.Count > 0
     End Sub
 
 End Class
