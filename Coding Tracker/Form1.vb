@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Form1
 
@@ -201,12 +202,15 @@ Public Class Form1
         cmbMode.Items.Add("Constrained Mode")
         cmbMode.Items.Add("Sandbox Mode")
         cmbMode.SelectedIndex = 0
+        cmbMode.DropDownStyle = ComboBoxStyle.DropDownList
+
         UpdateUndoButtonState()
         lblCityBudget.Text = "Budget: ₱" & budget.ToString("N0")
         lblPower.Text = "Total Power: 0 W"
 
         cmbCityType.Items.AddRange(citySettings.Keys.ToArray())
         cmbCityType.SelectedIndex = 0
+        cmbCityType.DropDownStyle = ComboBoxStyle.DropDownList
 
         Form2.Show()
 

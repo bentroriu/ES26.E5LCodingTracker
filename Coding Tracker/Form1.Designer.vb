@@ -46,11 +46,11 @@ Partial Class Form1
         'btnSimulate
         '
         Me.btnSimulate.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSimulate.Location = New System.Drawing.Point(1121, 358)
+        Me.btnSimulate.Location = New System.Drawing.Point(1121, 282)
         Me.btnSimulate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSimulate.Name = "btnSimulate"
         Me.btnSimulate.Size = New System.Drawing.Size(127, 36)
-        Me.btnSimulate.TabIndex = 4
+        Me.btnSimulate.TabIndex = 8
         Me.btnSimulate.Text = "Simulate"
         Me.btnSimulate.UseVisualStyleBackColor = False
         '
@@ -58,11 +58,11 @@ Partial Class Form1
         '
         Me.btnReset.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnReset.Location = New System.Drawing.Point(1121, 418)
+        Me.btnReset.Location = New System.Drawing.Point(1121, 357)
         Me.btnReset.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(127, 36)
-        Me.btnReset.TabIndex = 5
+        Me.btnReset.TabIndex = 9
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = False
         '
@@ -89,7 +89,7 @@ Partial Class Form1
         Me.pnlMapGrid.Location = New System.Drawing.Point(0, 0)
         Me.pnlMapGrid.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlMapGrid.Name = "pnlMapGrid"
-        Me.pnlMapGrid.Size = New System.Drawing.Size(1303, 620)
+        Me.pnlMapGrid.Size = New System.Drawing.Size(1300, 620)
         Me.pnlMapGrid.TabIndex = 0
         '
         'btnUndo
@@ -99,7 +99,7 @@ Partial Class Form1
         Me.btnUndo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUndo.Name = "btnUndo"
         Me.btnUndo.Size = New System.Drawing.Size(127, 36)
-        Me.btnUndo.TabIndex = 10
+        Me.btnUndo.TabIndex = 7
         Me.btnUndo.Text = "Undo Road"
         Me.btnUndo.UseVisualStyleBackColor = False
         '
@@ -110,7 +110,7 @@ Partial Class Form1
         Me.BtnMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnMenu.Name = "BtnMenu"
         Me.BtnMenu.Size = New System.Drawing.Size(75, 23)
-        Me.BtnMenu.TabIndex = 9
+        Me.BtnMenu.TabIndex = 0
         Me.BtnMenu.Text = "Menu"
         Me.BtnMenu.UseVisualStyleBackColor = False
         '
@@ -119,7 +119,7 @@ Partial Class Form1
         Me.lblMaxBuildings.AutoSize = True
         Me.lblMaxBuildings.BackColor = System.Drawing.Color.Transparent
         Me.lblMaxBuildings.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMaxBuildings.Location = New System.Drawing.Point(950, 295)
+        Me.lblMaxBuildings.Location = New System.Drawing.Point(1045, 212)
         Me.lblMaxBuildings.Name = "lblMaxBuildings"
         Me.lblMaxBuildings.Size = New System.Drawing.Size(118, 21)
         Me.lblMaxBuildings.TabIndex = 8
@@ -141,11 +141,11 @@ Partial Class Form1
         Me.lblCityBudget.AutoSize = True
         Me.lblCityBudget.BackColor = System.Drawing.Color.Transparent
         Me.lblCityBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityBudget.Location = New System.Drawing.Point(950, 269)
+        Me.lblCityBudget.Location = New System.Drawing.Point(1045, 180)
         Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(59, 21)
+        Me.lblCityBudget.Size = New System.Drawing.Size(63, 21)
         Me.lblCityBudget.TabIndex = 7
-        Me.lblCityBudget.Text = "Budget"
+        Me.lblCityBudget.Text = "Budget:"
         '
         'btnBridge
         '
@@ -161,11 +161,12 @@ Partial Class Form1
         'cmbCityType
         '
         Me.cmbCityType.FormattingEnabled = True
-        Me.cmbCityType.Location = New System.Drawing.Point(1103, 235)
+        Me.cmbCityType.ItemHeight = 16
+        Me.cmbCityType.Location = New System.Drawing.Point(1121, 142)
         Me.cmbCityType.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbCityType.Name = "cmbCityType"
         Me.cmbCityType.Size = New System.Drawing.Size(145, 24)
-        Me.cmbCityType.TabIndex = 6
+        Me.cmbCityType.TabIndex = 2
         '
         'btnBuilding
         '
@@ -183,7 +184,7 @@ Partial Class Form1
         Me.lblCityType.AutoSize = True
         Me.lblCityType.BackColor = System.Drawing.Color.Transparent
         Me.lblCityType.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityType.Location = New System.Drawing.Point(995, 194)
+        Me.lblCityType.Location = New System.Drawing.Point(1025, 142)
         Me.lblCityType.Name = "lblCityType"
         Me.lblCityType.Size = New System.Drawing.Size(83, 21)
         Me.lblCityType.TabIndex = 3
@@ -205,7 +206,7 @@ Partial Class Form1
         Me.lblBudget.AutoSize = True
         Me.lblBudget.BackColor = System.Drawing.Color.Transparent
         Me.lblBudget.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBudget.Location = New System.Drawing.Point(979, 96)
+        Me.lblBudget.Location = New System.Drawing.Point(1079, 23)
         Me.lblBudget.Name = "lblBudget"
         Me.lblBudget.Size = New System.Drawing.Size(63, 21)
         Me.lblBudget.TabIndex = 0
@@ -216,7 +217,7 @@ Partial Class Form1
         Me.lblPower.AutoSize = True
         Me.lblPower.BackColor = System.Drawing.Color.Transparent
         Me.lblPower.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPower.Location = New System.Drawing.Point(979, 127)
+        Me.lblPower.Location = New System.Drawing.Point(1079, 58)
         Me.lblPower.Name = "lblPower"
         Me.lblPower.Size = New System.Drawing.Size(99, 21)
         Me.lblPower.TabIndex = 1
@@ -226,18 +227,19 @@ Partial Class Form1
         '
         Me.cmbMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMode.FormattingEnabled = True
-        Me.cmbMode.Location = New System.Drawing.Point(1103, 158)
+        Me.cmbMode.ItemHeight = 16
+        Me.cmbMode.Location = New System.Drawing.Point(1121, 97)
         Me.cmbMode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbMode.Name = "cmbMode"
         Me.cmbMode.Size = New System.Drawing.Size(145, 24)
-        Me.cmbMode.TabIndex = 3
+        Me.cmbMode.TabIndex = 1
         '
         'lblMode
         '
         Me.lblMode.AutoSize = True
         Me.lblMode.BackColor = System.Drawing.Color.Transparent
         Me.lblMode.Font = New System.Drawing.Font("Palatino Linotype", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMode.Location = New System.Drawing.Point(1015, 158)
+        Me.lblMode.Location = New System.Drawing.Point(1051, 100)
         Me.lblMode.Name = "lblMode"
         Me.lblMode.Size = New System.Drawing.Size(53, 21)
         Me.lblMode.TabIndex = 2
