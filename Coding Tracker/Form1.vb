@@ -105,6 +105,9 @@ Public Class Form1
 
         cmbCityType.Items.AddRange(citySettings.Keys.ToArray())
         cmbCityType.SelectedIndex = 0
+
+        Form2.Show()
+
     End Sub
 
 End Class

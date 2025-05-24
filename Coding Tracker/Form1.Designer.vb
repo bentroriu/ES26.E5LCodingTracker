@@ -213,9 +213,6 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CITY MAP BUILDER"
-        Me.grpTools.ResumeLayout(False)
-        Me.grpProperties.ResumeLayout(False)
-        Me.grpProperties.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
