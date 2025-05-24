@@ -29,16 +29,16 @@ Partial Class Form1
         Me.btnBridge = New System.Windows.Forms.Button()
         Me.btnRoad = New System.Windows.Forms.Button()
         Me.grpProperties = New System.Windows.Forms.GroupBox()
+        Me.lblMaxBuildings = New System.Windows.Forms.Label()
+        Me.lblCityBudget = New System.Windows.Forms.Label()
+        Me.cmbCityType = New System.Windows.Forms.ComboBox()
+        Me.lblCityType = New System.Windows.Forms.Label()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnSimulate = New System.Windows.Forms.Button()
         Me.cmbMode = New System.Windows.Forms.ComboBox()
         Me.lblMode = New System.Windows.Forms.Label()
         Me.lblPower = New System.Windows.Forms.Label()
         Me.lblBudget = New System.Windows.Forms.Label()
-        Me.lblCityType = New System.Windows.Forms.Label()
-        Me.cmbCityType = New System.Windows.Forms.ComboBox()
-        Me.lblCityBudget = New System.Windows.Forms.Label()
-        Me.lblMaxBuildings = New System.Windows.Forms.Label()
         Me.grpTools.SuspendLayout()
         Me.grpProperties.SuspendLayout()
         Me.SuspendLayout()
@@ -119,6 +119,41 @@ Partial Class Form1
         Me.grpProperties.TabStop = False
         Me.grpProperties.Text = "Properties"
         '
+        'lblMaxBuildings
+        '
+        Me.lblMaxBuildings.AutoSize = True
+        Me.lblMaxBuildings.Location = New System.Drawing.Point(25, 238)
+        Me.lblMaxBuildings.Name = "lblMaxBuildings"
+        Me.lblMaxBuildings.Size = New System.Drawing.Size(93, 16)
+        Me.lblMaxBuildings.TabIndex = 8
+        Me.lblMaxBuildings.Text = "Max Buildings:"
+        '
+        'lblCityBudget
+        '
+        Me.lblCityBudget.AutoSize = True
+        Me.lblCityBudget.Location = New System.Drawing.Point(25, 209)
+        Me.lblCityBudget.Name = "lblCityBudget"
+        Me.lblCityBudget.Size = New System.Drawing.Size(50, 16)
+        Me.lblCityBudget.TabIndex = 7
+        Me.lblCityBudget.Text = "Budget"
+        '
+        'cmbCityType
+        '
+        Me.cmbCityType.FormattingEnabled = True
+        Me.cmbCityType.Location = New System.Drawing.Point(66, 166)
+        Me.cmbCityType.Name = "cmbCityType"
+        Me.cmbCityType.Size = New System.Drawing.Size(145, 24)
+        Me.cmbCityType.TabIndex = 6
+        '
+        'lblCityType
+        '
+        Me.lblCityType.AutoSize = True
+        Me.lblCityType.Location = New System.Drawing.Point(15, 134)
+        Me.lblCityType.Name = "lblCityType"
+        Me.lblCityType.Size = New System.Drawing.Size(67, 16)
+        Me.lblCityType.TabIndex = 3
+        Me.lblCityType.Text = "City Type:"
+        '
         'btnReset
         '
         Me.btnReset.Location = New System.Drawing.Point(28, 334)
@@ -172,41 +207,6 @@ Partial Class Form1
         Me.lblBudget.TabIndex = 0
         Me.lblBudget.Text = "Budget:"
         '
-        'lblCityType
-        '
-        Me.lblCityType.AutoSize = True
-        Me.lblCityType.Location = New System.Drawing.Point(15, 134)
-        Me.lblCityType.Name = "lblCityType"
-        Me.lblCityType.Size = New System.Drawing.Size(67, 16)
-        Me.lblCityType.TabIndex = 3
-        Me.lblCityType.Text = "City Type:"
-        '
-        'cmbCityType
-        '
-        Me.cmbCityType.FormattingEnabled = True
-        Me.cmbCityType.Location = New System.Drawing.Point(66, 166)
-        Me.cmbCityType.Name = "cmbCityType"
-        Me.cmbCityType.Size = New System.Drawing.Size(145, 24)
-        Me.cmbCityType.TabIndex = 6
-        '
-        'lblCityBudget
-        '
-        Me.lblCityBudget.AutoSize = True
-        Me.lblCityBudget.Location = New System.Drawing.Point(25, 209)
-        Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(50, 16)
-        Me.lblCityBudget.TabIndex = 7
-        Me.lblCityBudget.Text = "Budget"
-        '
-        'lblMaxBuildings
-        '
-        Me.lblMaxBuildings.AutoSize = True
-        Me.lblMaxBuildings.Location = New System.Drawing.Point(25, 238)
-        Me.lblMaxBuildings.Name = "lblMaxBuildings"
-        Me.lblMaxBuildings.Size = New System.Drawing.Size(93, 16)
-        Me.lblMaxBuildings.TabIndex = 8
-        Me.lblMaxBuildings.Text = "Max Buildings:"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -216,6 +216,7 @@ Partial Class Form1
         Me.Controls.Add(Me.grpTools)
         Me.Controls.Add(Me.pnlMapGrid)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.grpTools.ResumeLayout(False)
         Me.grpProperties.ResumeLayout(False)
