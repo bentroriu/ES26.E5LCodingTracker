@@ -38,6 +38,7 @@ Partial Class Form1
         Me.lblPower = New System.Windows.Forms.Label()
         Me.cmbMode = New System.Windows.Forms.ComboBox()
         Me.lblMode = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnlMapGrid.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,6 +46,7 @@ Partial Class Form1
         '
         Me.pnlMapGrid.BackColor = System.Drawing.Color.DimGray
         Me.pnlMapGrid.BackgroundImage = Global.Coding_Tracker.My.Resources.Resources.Qarvic
+        Me.pnlMapGrid.Controls.Add(Me.Button1)
         Me.pnlMapGrid.Controls.Add(Me.lblMaxBuildings)
         Me.pnlMapGrid.Controls.Add(Me.btnPowerLine)
         Me.pnlMapGrid.Controls.Add(Me.lblCityBudget)
@@ -202,6 +204,15 @@ Partial Class Form1
         Me.lblMode.TabIndex = 2
         Me.lblMode.Text = "Mode:"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Menu"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -236,4 +247,5 @@ Partial Class Form1
     Friend WithEvents cmbCityType As ComboBox
     Friend WithEvents lblCityBudget As Label
     Friend WithEvents lblMaxBuildings As Label
+    Friend WithEvents Button1 As Button
 End Class

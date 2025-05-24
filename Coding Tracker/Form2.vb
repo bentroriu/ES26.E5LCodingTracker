@@ -14,7 +14,7 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim form3 As New Form3
-        form3.Show()
+        form3.ShowDialog()
         Call form3.BringToFront()
     End Sub
 
