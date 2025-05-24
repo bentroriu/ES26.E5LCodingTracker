@@ -179,7 +179,22 @@ Public Class Form1
         Dim cityData = citySettings(selected)
 
         lblCityBudget.Text = "Budget: ₱" & cityData.budget.ToString("N0")
+        lblBudget.Text = "Budget: ₱" & cityData.budget.ToString("N0")
         lblMaxBuildings.Text = "Max Buildings: " & cityData.maxBuildings
+        Roads.Clear()          ' Remove all saved Roads
+        Powerlines.Clear()     ' Remove all saved elements
+        Buildings.Clear()
+        Bridges.Clear()
+        drawingRoad = False    ' Cancel any in-progress Road
+        pnlMapGrid.Invalidate()
+        Select Case cmbCityType.SelectedIndex
+            Case 0
+                budget = 100000
+            Case 1
+                budget = 250000
+            Case 2
+                budget = 500000
+        End Select
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -187,7 +202,7 @@ Public Class Form1
         cmbMode.Items.Add("Sandbox Mode")
         cmbMode.SelectedIndex = 0
         UpdateUndoButtonState()
-        lblCityBudget.Text = "Budget: ₱" & budget.ToString("N2")
+        lblCityBudget.Text = "Budget: ₱" & budget.ToString("N0")
         lblPower.Text = "Total Power: 0 W"
 
         cmbCityType.Items.AddRange(citySettings.Keys.ToArray())
