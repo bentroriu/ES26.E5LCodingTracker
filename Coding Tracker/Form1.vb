@@ -1,5 +1,7 @@
 ﻿Imports System.Drawing
+Imports System.Media
 Public Class Form1
+
 
     Private budget As Double = 100000
     Private buildingCount As Integer = 0
