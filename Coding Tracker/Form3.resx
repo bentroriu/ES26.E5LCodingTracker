@@ -120,8 +120,9 @@
   <data name="Label1.Text" xml:space="preserve">
     <value>Hello! This is My City Planner!
 
-An interactive application that allows users to design urban layouts, focusing on the placement of roads,
-bridges, and buildings.
+An interactive application that allows users to design urban layouts,
+ focusing on the placement of buildings and powerlines while having fun.
+
 Members:
 
 John Marc Bermudez

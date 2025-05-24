@@ -168,5 +168,11 @@
   <ItemGroup>
     <None Include="Resources\themesong.mp3" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENSC 26 GANTT CHART.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENSC 26 GANTT CHART-Photoroom.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

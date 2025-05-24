@@ -1,11 +1,11 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.IO
+Imports AxWMPLib
 
 Public Class Form2
 
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -36,11 +36,13 @@ Public Class Form2
         Dim song(stream.Length - 1) As Byte
         stream.Read(song, 0, stream.Length)
         File.WriteAllBytes(tempPath, song) ' Use your resource name here
-        AxWindowsMediaPlayer1.URL = tempPath
-        AxWindowsMediaPlayer1.settings.setMode("loop", True) ' Optional loop
+        AxWindowsMediaPlayer1.URl = tempPath
+        AxWindowsMediaPlayer1.settings.setMode("loop"; True)
         AxWindowsMediaPlayer1.Ctlcontrols.play()
         AxWindowsMediaPlayer1.Visible = False
+
     End Sub
+
 
 
 End Class

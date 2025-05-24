@@ -46,7 +46,7 @@ Partial Class Form1
         'pnlMapGrid
         '
         Me.pnlMapGrid.BackColor = System.Drawing.Color.DimGray
-        Me.pnlMapGrid.BackgroundImage = Global.Coding_Tracker.My.Resources.Resources.Qarvic
+        Me.pnlMapGrid.BackgroundImage = CType(resources.GetObject("pnlMapGrid.BackgroundImage"), System.Drawing.Image)
         Me.pnlMapGrid.Controls.Add(Me.btnUndo)
         Me.pnlMapGrid.Controls.Add(Me.BtnMenu)
         Me.pnlMapGrid.Controls.Add(Me.lblMaxBuildings)

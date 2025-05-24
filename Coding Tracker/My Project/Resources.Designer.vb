@@ -63,6 +63,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property ENSC_26_GANTT_CHART() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ENSC 26 GANTT CHART", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ENSC_26_GANTT_CHART_Photoroom() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ENSC 26 GANTT CHART-Photoroom", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Qarvic() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Qarvic", resourceCulture)
