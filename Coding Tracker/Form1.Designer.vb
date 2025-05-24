@@ -156,7 +156,7 @@ Partial Class Form1
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(28, 334)
+        Me.btnReset.Location = New System.Drawing.Point(34, 334)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(127, 36)
         Me.btnReset.TabIndex = 5
@@ -165,7 +165,7 @@ Partial Class Form1
         '
         'btnSimulate
         '
-        Me.btnSimulate.Location = New System.Drawing.Point(28, 292)
+        Me.btnSimulate.Location = New System.Drawing.Point(34, 292)
         Me.btnSimulate.Name = "btnSimulate"
         Me.btnSimulate.Size = New System.Drawing.Size(127, 36)
         Me.btnSimulate.TabIndex = 4
