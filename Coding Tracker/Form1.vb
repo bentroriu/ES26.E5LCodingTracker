@@ -253,6 +253,11 @@ Public Class Form1
         Powerlines.Clear()     ' Remove all saved elements
         Buildings.Clear()
         Bridges.Clear()
+        btnUndo.Enabled = False
+        btnUndobridge.Enabled = False
+        btnundobuilding.Enabled = False
+        btnundopowerline.Enabled = False
+
         drawingRoad = False    ' Cancel any in-progress Road
         pnlMapGrid.Invalidate()
         houseImages = {My.Resources.house5, My.Resources.house4, My.Resources.house1}
