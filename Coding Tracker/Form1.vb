@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
+
 Public Class Form1
 
 
@@ -297,7 +298,11 @@ Public Class Form1
 
         Form2.Show()
 
-        CheckBox1.Checked = True
+        If MusicOn = True Then
+            CheckBox1.Checked = True
+        Else
+            CheckBox1.Checked = False
+        End If
         houseImages = {My.Resources.house5, My.Resources.house4, My.Resources.house1}
         cityImages = {My.Resources.house3, My.Resources.house2, My.Resources.bldg2}
         metroImages = {My.Resources.bldg3, My.Resources.bldg4, My.Resources.bldg5}
@@ -345,8 +350,9 @@ Public Class Form1
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         Dim player As New System.Media.SoundPlayer(My.Resources.THEMESONG)
-        If CheckBox1.Checked = True Then
-            player.Play()
+        MusicOn = CheckBox1.Checked
+        If MusicOn = True Then
+            player.PlayLooping()
         Else
             player.Stop()
         End If
@@ -389,5 +395,10 @@ Public Class Form1
         Call UpdateUndoButtonState()
         budget += 10000 'reverse road spending
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
+    End Sub
+
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
+        CheckBox1.Checked = MusicOn
     End Sub
 End Class
