@@ -59,38 +59,63 @@ Public Class Form1
             MsgBox("Please select a tool from the left side", vbExclamation, "No Tool Selected.")
             Exit Sub
         End If
-        For Each ctrl As Control In pnlMapGrid.Controls
-            If ctrl.Bounds.Contains(e.Location) Then Exit Sub
-        Next
 
         Dim cost As Double = 0
         Dim powerUse As Double = 0
 
         Select Case selectedTool
             Case "Road"
-
                 If e.Button = MouseButtons.Left Then
                     If Not drawingRoad Then
+                        ' First click: Before starting preview, check budget
+                        cost = 5000
+                        If Not isSandboxMode AndAlso budget < cost Then
+                            MessageBox.Show("Not enough budget!")
+                            Exit Sub
+                        End If
+
                         RoadStart = e.Location
                         drawingRoad = True
-                        cost = 5000
+
                     Else
+                        ' Second click: Actually add the road
+                        If Not isSandboxMode AndAlso budget < cost Then
+                            MessageBox.Show("Not enough budget!")
+                            drawingRoad = False ' cancel the preview if budget is not enough
+                            Exit Sub
+                        End If
+
                         Roads.Add(Tuple.Create(RoadStart, e.Location))
+                        budget -= cost
                         UpdateUndoButtonState()
                         drawingRoad = False
                         pnlMapGrid.Invalidate()
                     End If
-
                 End If
             Case "Bridge"
                 cost = 15000
+                If Not isSandboxMode AndAlso budget < cost Then
+                    MessageBox.Show("Not enough budget!")
+                    Return
+                End If
                 Dim bridgesrect As New Rectangle(e.X - 10, e.Y - 5, 100, 100)
                 Bridges.Add(bridgesrect)
                 UpdateUndoButtonState()
                 pnlMapGrid.Invalidate()
             Case "Building"
                 cost = 20000
-                powerUse = 300
+                If Not isSandboxMode AndAlso budget < cost Then
+                    MessageBox.Show("Not enough budget!")
+                    Return
+                End If
+                Select Case cmbCityType.SelectedIndex
+                    Case 0
+                        powerUse = 3000
+                    Case 1
+                        powerUse = 80000
+                    Case 2
+                        powerUse = 500000
+                End Select
                 Dim buildingsrect As New Rectangle(e.X - 10, e.Y - 5, 80, 80)
                 Buildings.Add(buildingsrect)
                 UpdateUndoButtonState()
@@ -98,6 +123,10 @@ Public Class Form1
 
             Case "PowerLine"
                 cost = 10000
+                If Not isSandboxMode AndAlso budget < cost Then
+                    MessageBox.Show("Not enough budget!")
+                    Return
+                End If
                 Dim powerlinesrect As New Rectangle(e.X - 10, e.Y - 5, 100, 100)
                 Powerlines.Add(powerlinesrect)
                 UpdateUndoButtonState()
@@ -341,7 +370,14 @@ Public Class Form1
         Call UpdateUndoButtonState()
         budget += 20000 'reverse road spending
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
-        totalPower -= 300
+        Select Case cmbCityType.SelectedIndex
+            Case 0
+                totalPower -= 3000
+            Case 1
+                totalPower -= 80000
+            Case 2
+                totalPower -= 500000
+        End Select
         lblPower.Text = "Total Power: " & totalPower.ToString("F0") & " W"
     End Sub
 
