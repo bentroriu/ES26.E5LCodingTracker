@@ -63,16 +63,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property bldg1() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("bldg1", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property bldg2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("bldg2", resourceCulture)
@@ -106,6 +96,16 @@ Namespace My.Resources
         Friend ReadOnly Property bldg5() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("bldg5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property bridge() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("bridge", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -156,6 +156,16 @@ Namespace My.Resources
         Friend ReadOnly Property house5() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("house5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property powerline() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("powerline", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

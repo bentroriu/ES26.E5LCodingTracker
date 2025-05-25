@@ -18,6 +18,7 @@ Public Class Form1
     Private Buildings As New List(Of Rectangle)
     Private Powerlines As New List(Of Rectangle)
     Private Bridges As New List(Of Rectangle)
+    Private randomizer As Integer = 0
 
     Private citySettings As New Dictionary(Of String, (budget As Double, maxBuildings As Integer)) From {
         {"Small Town", (100000, 5)},
@@ -48,6 +49,7 @@ Public Class Form1
 
     Private Sub pnlMapGrid_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMapGrid.MouseClick
         ' Ignore clicks on the controls inside the PictureBoxen
+
         If selectedTool = "" Then
             MsgBox("Please select a tool from the left side", vbExclamation, "No Tool Selected.")
             Exit Sub
@@ -77,19 +79,23 @@ Public Class Form1
                 End If
             Case "Bridge"
                 cost = 15000
-                Dim bridgesRect As New Rectangle(e.X - 10, e.Y - 5, 50, 50)
-                Bridges.Add(bridgesRect)
+                Dim bridgesrect As New Rectangle(e.X - 10, e.Y - 5, 100, 100)
+                Bridges.Add(bridgesrect)
+                UpdateUndoButtonState()
                 pnlMapGrid.Invalidate()
             Case "Building"
                 cost = 20000
                 powerUse = 300
-                Dim buildingsRect As New Rectangle(e.X - 10, e.Y - 5, 50, 50)
-                Buildings.Add(buildingsRect)
+                Dim buildingsrect As New Rectangle(e.X - 10, e.Y - 5, 80, 80)
+                Buildings.Add(buildingsrect)
+                UpdateUndoButtonState()
                 pnlMapGrid.Invalidate()
+
             Case "PowerLine"
                 cost = 10000
-                Dim powerlinesRect As New Rectangle(e.X - 10, e.Y - 5, 50, 50)
-                Powerlines.Add(powerlinesRect)
+                Dim powerlinesrect As New Rectangle(e.X - 10, e.Y - 5, 100, 100)
+                Powerlines.Add(powerlinesrect)
+                UpdateUndoButtonState()
                 pnlMapGrid.Invalidate()
         End Select
 
@@ -139,19 +145,50 @@ Public Class Form1
         If drawingRoad Then
             e.Graphics.DrawLine(previewPen, RoadStart, RoadPreviewEnd)
         End If
-
+        randomizer = 0 'ensures that randomizer starts at 0
         For Each rect In Bridges
-            e.Graphics.FillRectangle(Brushes.Yellow, rect)
-            e.Graphics.DrawRectangle(Pens.Black, rect)
+            e.Graphics.DrawImage(My.Resources.bridge, rect)
         Next
+        randomizer = 0 'ensures that randomizer starts at 0
         For Each rect In Buildings
-            e.Graphics.FillRectangle(Brushes.Blue, rect)
-            e.Graphics.DrawRectangle(Pens.Black, rect)
-        Next
+            randomizer += 1
+            If randomizer > 3 Then 'loops randomizer from 1-3
+                randomizer = 1
+            End If
+            Select Case cmbCityType.SelectedIndex 'changes cosmetic of building depending on city type
+                Case 0 'small town
+                    Select Case randomizer
+                        Case 1
+                            e.Graphics.DrawImage(My.Resources.house5, rect)
+                        Case 2
+                            e.Graphics.DrawImage(My.Resources.house4, rect)
+                        Case 3
+                            e.Graphics.DrawImage(My.Resources.house1, rect)
+                    End Select
+                Case 1 'city
+                    Select Case randomizer
+                        Case 1
+                            e.Graphics.DrawImage(My.Resources.house3, rect)
+                        Case 2
+                            e.Graphics.DrawImage(My.Resources.house2, rect)
+                        Case 3
+                            e.Graphics.DrawImage(My.Resources.bldg2, rect)
+                    End Select
 
+                Case 2 'metro city
+                    Select Case randomizer
+                        Case 1
+                            e.Graphics.DrawImage(My.Resources.bldg3, rect)
+                        Case 2
+                            e.Graphics.DrawImage(My.Resources.bldg4, rect)
+                        Case 3
+                            e.Graphics.DrawImage(My.Resources.bldg5, rect)
+                    End Select
+            End Select
+        Next
+        randomizer = 0 'ensures that randomizer starts at 0
         For Each rect In Powerlines
-            e.Graphics.FillRectangle(Brushes.Red, rect)
-            e.Graphics.DrawRectangle(Pens.Black, rect)
+            e.Graphics.DrawImage(My.Resources.powerline, rect)
         Next
 
     End Sub
@@ -257,6 +294,9 @@ Public Class Form1
     End Sub
     Private Sub UpdateUndoButtonState()
         btnUndo.Enabled = Roads.Count > 0
+        btnUndobridge.Enabled = Bridges.Count > 0
+        btnundobuilding.Enabled = Buildings.Count > 0
+        btnundopowerline.Enabled = Powerlines.Count > 0
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -266,5 +306,37 @@ Public Class Form1
         Else
             player.Stop()
         End If
+    End Sub
+
+    Private Sub btnUndobridge_Click(sender As Object, e As EventArgs) Handles btnUndobridge.Click
+        If Bridges.Count > 0 Then
+            Bridges.RemoveAt(Bridges.Count - 1)  ' Remove the most recent road
+            pnlMapGrid.Invalidate()         ' Redraw the panel
+        End If
+        Call UpdateUndoButtonState()
+        budget += 15000 'reverse road spending
+        lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
+    End Sub
+
+    Private Sub btnundobuilding_Click(sender As Object, e As EventArgs) Handles btnundobuilding.Click
+        If Buildings.Count > 0 Then
+            Buildings.RemoveAt(Buildings.Count - 1)  ' Remove the most recent road
+            pnlMapGrid.Invalidate()         ' Redraw the panel
+        End If
+        Call UpdateUndoButtonState()
+        budget += 20000 'reverse road spending
+        lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
+        totalPower -= 300
+        lblPower.Text = "Total Power: " & totalPower.ToString("F0") & " W"
+    End Sub
+
+    Private Sub btnundopowerline_Click(sender As Object, e As EventArgs) Handles btnundopowerline.Click
+        If Powerlines.Count > 0 Then
+            Powerlines.RemoveAt(Powerlines.Count - 1)  ' Remove the most recent road
+            pnlMapGrid.Invalidate()         ' Redraw the panel
+        End If
+        Call UpdateUndoButtonState()
+        budget += 10000 'reverse road spending
+        lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
     End Sub
 End Class

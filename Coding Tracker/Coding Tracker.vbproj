@@ -187,34 +187,46 @@
     <None Include="Resources\download.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bldg5.png" />
+    <None Include="Resources\powerline.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house5.png" />
+    <None Include="Resources\Screenshot_2025-05-25_141256-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house4.png" />
+    <None Include="Resources\metrocity-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bldg4.png" />
+    <None Include="Resources\townbldg-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house3.png" />
+    <None Include="Resources\bldg1-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bldg3.png" />
+    <None Include="Resources\bridge-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bldg2.png" />
+    <None Include="Resources\bldg4-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bldg1.png" />
+    <None Include="Resources\bldg5-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house2.png" />
+    <None Include="Resources\city-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\house1.png" />
+    <None Include="Resources\house1-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house3-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house4-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house5-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
