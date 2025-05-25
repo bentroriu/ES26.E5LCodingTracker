@@ -186,5 +186,35 @@
   <ItemGroup>
     <None Include="Resources\download.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bldg5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bldg4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bldg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bldg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bldg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

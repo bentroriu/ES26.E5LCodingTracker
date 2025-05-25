@@ -214,6 +214,8 @@ Public Class Form1
 
         Form2.Show()
 
+        CheckBox1.Checked = True
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnMenu.Click
