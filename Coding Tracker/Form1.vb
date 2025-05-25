@@ -218,6 +218,23 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnMenu.Click
         Form2.Show()
+        Select Case cmbCityType.SelectedIndex
+            Case 0
+                budget = 100000
+            Case 1
+                budget = 250000
+            Case 2
+                budget = 500000
+        End Select
+        lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
+        lblPower.Text = "Total Power: 0 W"
+        Roads.Clear()          ' Remove all saved Roads
+        Powerlines.Clear()     ' Remove all saved elements
+        Buildings.Clear()
+        Bridges.Clear()
+        drawingRoad = False    ' Cancel any in-progress Road
+        pnlMapGrid.Invalidate()
+        UpdateUndoButtonState()
     End Sub
 
     Private Sub btnUndo_Click(sender As Object, e As EventArgs) Handles btnUndo.Click
