@@ -19,6 +19,12 @@ Public Class Form1
     Private Powerlines As New List(Of Rectangle)
     Private Bridges As New List(Of Rectangle)
     Private randomizer As Integer = 0
+    Dim houseImages() As Image
+    Dim cityImages() As Image
+    Dim metroImages() As Image
+    Dim bridgeImage As Image
+    Dim powerlineImage As Image
+
 
     Private citySettings As New Dictionary(Of String, (budget As Double, maxBuildings As Integer)) From {
         {"Small Town", (100000, 5)},
@@ -49,7 +55,6 @@ Public Class Form1
 
     Private Sub pnlMapGrid_MouseClick(sender As Object, e As MouseEventArgs) Handles pnlMapGrid.MouseClick
         ' Ignore clicks on the controls inside the PictureBoxen
-
         If selectedTool = "" Then
             MsgBox("Please select a tool from the left side", vbExclamation, "No Tool Selected.")
             Exit Sub
@@ -113,7 +118,6 @@ Public Class Form1
         lblPower.Text = "Total Power: " & totalPower.ToString("F0") & " W"
 
 
-
     End Sub
     Private Function GetLineBoundingBox(p1 As Point, p2 As Point) As Rectangle
         Dim padding As Integer = 22 ' Extra space for thick pen
@@ -141,56 +145,49 @@ Public Class Form1
         For Each Road In Roads
             e.Graphics.DrawLine(RoadPen, Road.Item1, Road.Item2)
         Next
-
         If drawingRoad Then
             e.Graphics.DrawLine(previewPen, RoadStart, RoadPreviewEnd)
         End If
-        randomizer = 0 'ensures that randomizer starts at 0
+
         For Each rect In Bridges
-            e.Graphics.DrawImage(My.Resources.bridge, rect)
+            e.Graphics.DrawImage(bridgeImage, rect)
         Next
-        randomizer = 0 'ensures that randomizer starts at 0
+
+        randomizer = 0
         For Each rect In Buildings
             randomizer += 1
-            If randomizer > 3 Then 'loops randomizer from 1-3
-                randomizer = 1
-            End If
-            Select Case cmbCityType.SelectedIndex 'changes cosmetic of building depending on city type
-                Case 0 'small town
-                    Select Case randomizer
-                        Case 1
-                            e.Graphics.DrawImage(My.Resources.house5, rect)
-                        Case 2
-                            e.Graphics.DrawImage(My.Resources.house4, rect)
-                        Case 3
-                            e.Graphics.DrawImage(My.Resources.house1, rect)
-                    End Select
-                Case 1 'city
-                    Select Case randomizer
-                        Case 1
-                            e.Graphics.DrawImage(My.Resources.house3, rect)
-                        Case 2
-                            e.Graphics.DrawImage(My.Resources.house2, rect)
-                        Case 3
-                            e.Graphics.DrawImage(My.Resources.bldg2, rect)
-                    End Select
+            If randomizer > 3 Then randomizer = 1
 
-                Case 2 'metro city
-                    Select Case randomizer
-                        Case 1
-                            e.Graphics.DrawImage(My.Resources.bldg3, rect)
-                        Case 2
-                            e.Graphics.DrawImage(My.Resources.bldg4, rect)
-                        Case 3
-                            e.Graphics.DrawImage(My.Resources.bldg5, rect)
-                    End Select
+            Select Case cmbCityType.SelectedIndex
+                Case 0
+                    e.Graphics.DrawImage(houseImages(randomizer - 1), rect)
+                Case 1
+                    e.Graphics.DrawImage(cityImages(randomizer - 1), rect)
+                Case 2
+                    e.Graphics.DrawImage(metroImages(randomizer - 1), rect)
             End Select
         Next
-        randomizer = 0 'ensures that randomizer starts at 0
+
         For Each rect In Powerlines
-            e.Graphics.DrawImage(My.Resources.powerline, rect)
+            e.Graphics.DrawImage(powerlineImage, rect)
         Next
 
+
+    End Sub
+
+    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        For Each img In houseImages
+            img.Dispose()
+        Next
+        For Each img In cityImages
+            img.Dispose()
+        Next
+        For Each img In metroImages
+            img.Dispose()
+        Next
+
+        bridgeImage.Dispose()
+        powerlineImage.Dispose()
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -259,6 +256,11 @@ Public Class Form1
         Form2.Show()
 
         CheckBox1.Checked = True
+        houseImages = {My.Resources.house5, My.Resources.house4, My.Resources.house1}
+        cityImages = {My.Resources.house3, My.Resources.house2, My.Resources.bldg2}
+        metroImages = {My.Resources.bldg3, My.Resources.bldg4, My.Resources.bldg5}
+        bridgeImage = My.Resources.bridge
+        powerlineImage = My.Resources.powerline
 
     End Sub
 
