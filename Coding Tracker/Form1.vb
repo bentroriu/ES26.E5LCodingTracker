@@ -27,10 +27,10 @@ Public Class Form1
     Dim powerlineImage As Image
 
 
-    Private citySettings As New Dictionary(Of String, (budget As Double, maxBuildings As Integer)) From {
-        {"Small Town", (100000, 5)},
-        {"City", (250000, 10)},
-        {"Metro City", (500000, 20)}
+    Private citySettings As New Dictionary(Of String, (budget As Double)) From {
+        {"Small Town", (100000.0)},
+        {"City", (250000.0)},
+        {"Metro City", (500000.0)}
     }
 
     ' Handlers for tool buttons now inside PictureBox (same names)
@@ -128,6 +128,14 @@ Public Class Form1
                     MessageBox.Show("Not enough budget!")
                     Return
                 End If
+                Select Case cmbCityType.SelectedIndex
+                    Case 0
+                        powerUse = 1000
+                    Case 1
+                        powerUse = 5000
+                    Case 2
+                        powerUse = 10000
+                End Select
                 Dim powerlinesrect As New Rectangle(e.X - 10, e.Y - 5, 100, 100)
                 Powerlines.Add(powerlinesrect)
                 UpdateUndoButtonState()
@@ -400,4 +408,6 @@ Public Class Form1
 
         CheckBox1.Checked = MusicOn
     End Sub
+
+
 End Class

@@ -26,10 +26,12 @@ Partial Class Form1
         Me.btnSimulate = New System.Windows.Forms.Button()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.pnlMapGrid = New System.Windows.Forms.Panel()
+        Me.btnundopowerline = New System.Windows.Forms.Button()
+        Me.btnundobuilding = New System.Windows.Forms.Button()
+        Me.btnUndobridge = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.btnUndo = New System.Windows.Forms.Button()
         Me.BtnMenu = New System.Windows.Forms.Button()
-        Me.lblMaxBuildings = New System.Windows.Forms.Label()
         Me.btnPowerLine = New System.Windows.Forms.Button()
         Me.lblCityBudget = New System.Windows.Forms.Label()
         Me.btnBridge = New System.Windows.Forms.Button()
@@ -41,9 +43,6 @@ Partial Class Form1
         Me.lblPower = New System.Windows.Forms.Label()
         Me.cmbMode = New System.Windows.Forms.ComboBox()
         Me.lblMode = New System.Windows.Forms.Label()
-        Me.btnUndobridge = New System.Windows.Forms.Button()
-        Me.btnundobuilding = New System.Windows.Forms.Button()
-        Me.btnundopowerline = New System.Windows.Forms.Button()
         Me.pnlMapGrid.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,10 +54,10 @@ Partial Class Form1
         Me.btnSimulate.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSimulate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSimulate.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSimulate.Location = New System.Drawing.Point(822, 314)
-        Me.btnSimulate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSimulate.Location = New System.Drawing.Point(1096, 386)
+        Me.btnSimulate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSimulate.Name = "btnSimulate"
-        Me.btnSimulate.Size = New System.Drawing.Size(95, 29)
+        Me.btnSimulate.Size = New System.Drawing.Size(127, 36)
         Me.btnSimulate.TabIndex = 8
         Me.btnSimulate.Text = "Simulate"
         Me.btnSimulate.UseVisualStyleBackColor = False
@@ -72,10 +71,10 @@ Partial Class Form1
         Me.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReset.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.Location = New System.Drawing.Point(822, 363)
-        Me.btnReset.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnReset.Location = New System.Drawing.Point(1096, 447)
+        Me.btnReset.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(95, 29)
+        Me.btnReset.Size = New System.Drawing.Size(127, 36)
         Me.btnReset.TabIndex = 9
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = False
@@ -90,7 +89,6 @@ Partial Class Form1
         Me.pnlMapGrid.Controls.Add(Me.CheckBox1)
         Me.pnlMapGrid.Controls.Add(Me.btnUndo)
         Me.pnlMapGrid.Controls.Add(Me.BtnMenu)
-        Me.pnlMapGrid.Controls.Add(Me.lblMaxBuildings)
         Me.pnlMapGrid.Controls.Add(Me.btnPowerLine)
         Me.pnlMapGrid.Controls.Add(Me.lblCityBudget)
         Me.pnlMapGrid.Controls.Add(Me.btnBridge)
@@ -105,10 +103,58 @@ Partial Class Form1
         Me.pnlMapGrid.Controls.Add(Me.cmbMode)
         Me.pnlMapGrid.Controls.Add(Me.lblMode)
         Me.pnlMapGrid.Location = New System.Drawing.Point(0, 0)
-        Me.pnlMapGrid.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pnlMapGrid.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pnlMapGrid.Name = "pnlMapGrid"
-        Me.pnlMapGrid.Size = New System.Drawing.Size(975, 504)
+        Me.pnlMapGrid.Size = New System.Drawing.Size(1300, 620)
         Me.pnlMapGrid.TabIndex = 0
+        '
+        'btnundopowerline
+        '
+        Me.btnundopowerline.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnundopowerline.BackgroundImage = CType(resources.GetObject("btnundopowerline.BackgroundImage"), System.Drawing.Image)
+        Me.btnundopowerline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnundopowerline.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnundopowerline.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnundopowerline.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnundopowerline.Location = New System.Drawing.Point(52, 508)
+        Me.btnundopowerline.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnundopowerline.Name = "btnundopowerline"
+        Me.btnundopowerline.Size = New System.Drawing.Size(213, 36)
+        Me.btnundopowerline.TabIndex = 13
+        Me.btnundopowerline.Text = "Undo Powerline"
+        Me.btnundopowerline.UseVisualStyleBackColor = False
+        '
+        'btnundobuilding
+        '
+        Me.btnundobuilding.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnundobuilding.BackgroundImage = CType(resources.GetObject("btnundobuilding.BackgroundImage"), System.Drawing.Image)
+        Me.btnundobuilding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnundobuilding.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnundobuilding.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnundobuilding.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnundobuilding.Location = New System.Drawing.Point(52, 468)
+        Me.btnundobuilding.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnundobuilding.Name = "btnundobuilding"
+        Me.btnundobuilding.Size = New System.Drawing.Size(213, 36)
+        Me.btnundobuilding.TabIndex = 12
+        Me.btnundobuilding.Text = "Undo Building"
+        Me.btnundobuilding.UseVisualStyleBackColor = False
+        '
+        'btnUndobridge
+        '
+        Me.btnUndobridge.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnUndobridge.BackgroundImage = CType(resources.GetObject("btnUndobridge.BackgroundImage"), System.Drawing.Image)
+        Me.btnUndobridge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnUndobridge.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUndobridge.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnUndobridge.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUndobridge.Location = New System.Drawing.Point(52, 427)
+        Me.btnUndobridge.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnUndobridge.Name = "btnUndobridge"
+        Me.btnUndobridge.Size = New System.Drawing.Size(213, 36)
+        Me.btnUndobridge.TabIndex = 11
+        Me.btnUndobridge.Text = "Undo Bridge"
+        Me.btnUndobridge.UseVisualStyleBackColor = False
         '
         'CheckBox1
         '
@@ -119,10 +165,10 @@ Partial Class Form1
         Me.CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CheckBox1.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(822, 24)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CheckBox1.Location = New System.Drawing.Point(1096, 30)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(119, 49)
+        Me.CheckBox1.Size = New System.Drawing.Size(159, 60)
         Me.CheckBox1.TabIndex = 10
         Me.CheckBox1.Text = "MUSIC"
         Me.CheckBox1.UseVisualStyleBackColor = False
@@ -135,10 +181,10 @@ Partial Class Form1
         Me.btnUndo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnUndo.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUndo.Location = New System.Drawing.Point(39, 314)
-        Me.btnUndo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUndo.Location = New System.Drawing.Point(52, 386)
+        Me.btnUndo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(160, 29)
+        Me.btnUndo.Size = New System.Drawing.Size(213, 36)
         Me.btnUndo.TabIndex = 7
         Me.btnUndo.Text = "Undo Road"
         Me.btnUndo.UseVisualStyleBackColor = False
@@ -151,25 +197,13 @@ Partial Class Form1
         Me.BtnMenu.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnMenu.Font = New System.Drawing.Font("Swis721 BlkOul BT", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMenu.Location = New System.Drawing.Point(9, 10)
-        Me.BtnMenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnMenu.Location = New System.Drawing.Point(12, 12)
+        Me.BtnMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnMenu.Name = "BtnMenu"
-        Me.BtnMenu.Size = New System.Drawing.Size(91, 35)
+        Me.BtnMenu.Size = New System.Drawing.Size(121, 43)
         Me.BtnMenu.TabIndex = 0
         Me.BtnMenu.Text = "Menu"
         Me.BtnMenu.UseVisualStyleBackColor = False
-        '
-        'lblMaxBuildings
-        '
-        Me.lblMaxBuildings.AutoSize = True
-        Me.lblMaxBuildings.BackColor = System.Drawing.Color.Transparent
-        Me.lblMaxBuildings.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMaxBuildings.Location = New System.Drawing.Point(692, 275)
-        Me.lblMaxBuildings.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblMaxBuildings.Name = "lblMaxBuildings"
-        Me.lblMaxBuildings.Size = New System.Drawing.Size(137, 20)
-        Me.lblMaxBuildings.TabIndex = 8
-        Me.lblMaxBuildings.Text = "Max Buildings:"
         '
         'btnPowerLine
         '
@@ -179,10 +213,10 @@ Partial Class Form1
         Me.btnPowerLine.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPowerLine.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPowerLine.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPowerLine.Location = New System.Drawing.Point(39, 240)
-        Me.btnPowerLine.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPowerLine.Location = New System.Drawing.Point(52, 295)
+        Me.btnPowerLine.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPowerLine.Name = "btnPowerLine"
-        Me.btnPowerLine.Size = New System.Drawing.Size(120, 29)
+        Me.btnPowerLine.Size = New System.Drawing.Size(160, 36)
         Me.btnPowerLine.TabIndex = 6
         Me.btnPowerLine.Text = "Powerline"
         Me.btnPowerLine.UseVisualStyleBackColor = False
@@ -192,10 +226,9 @@ Partial Class Form1
         Me.lblCityBudget.AutoSize = True
         Me.lblCityBudget.BackColor = System.Drawing.Color.Transparent
         Me.lblCityBudget.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityBudget.Location = New System.Drawing.Point(692, 240)
-        Me.lblCityBudget.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCityBudget.Location = New System.Drawing.Point(923, 295)
         Me.lblCityBudget.Name = "lblCityBudget"
-        Me.lblCityBudget.Size = New System.Drawing.Size(78, 20)
+        Me.lblCityBudget.Size = New System.Drawing.Size(97, 25)
         Me.lblCityBudget.TabIndex = 7
         Me.lblCityBudget.Text = "Budget:"
         '
@@ -207,10 +240,10 @@ Partial Class Form1
         Me.btnBridge.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBridge.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBridge.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBridge.Location = New System.Drawing.Point(39, 172)
-        Me.btnBridge.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBridge.Location = New System.Drawing.Point(52, 212)
+        Me.btnBridge.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBridge.Name = "btnBridge"
-        Me.btnBridge.Size = New System.Drawing.Size(120, 29)
+        Me.btnBridge.Size = New System.Drawing.Size(160, 36)
         Me.btnBridge.TabIndex = 4
         Me.btnBridge.Text = "Bridge"
         Me.btnBridge.UseVisualStyleBackColor = False
@@ -222,11 +255,11 @@ Partial Class Form1
         Me.cmbCityType.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmbCityType.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbCityType.FormattingEnabled = True
-        Me.cmbCityType.ItemHeight = 20
-        Me.cmbCityType.Location = New System.Drawing.Point(786, 206)
-        Me.cmbCityType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbCityType.ItemHeight = 25
+        Me.cmbCityType.Location = New System.Drawing.Point(1048, 254)
+        Me.cmbCityType.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbCityType.Name = "cmbCityType"
-        Me.cmbCityType.Size = New System.Drawing.Size(164, 28)
+        Me.cmbCityType.Size = New System.Drawing.Size(217, 33)
         Me.cmbCityType.TabIndex = 2
         '
         'btnBuilding
@@ -237,10 +270,10 @@ Partial Class Form1
         Me.btnBuilding.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuilding.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBuilding.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuilding.Location = New System.Drawing.Point(39, 206)
-        Me.btnBuilding.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuilding.Location = New System.Drawing.Point(52, 254)
+        Me.btnBuilding.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBuilding.Name = "btnBuilding"
-        Me.btnBuilding.Size = New System.Drawing.Size(120, 29)
+        Me.btnBuilding.Size = New System.Drawing.Size(160, 36)
         Me.btnBuilding.TabIndex = 5
         Me.btnBuilding.Text = "Building"
         Me.btnBuilding.UseVisualStyleBackColor = False
@@ -250,10 +283,9 @@ Partial Class Form1
         Me.lblCityType.AutoSize = True
         Me.lblCityType.BackColor = System.Drawing.Color.Transparent
         Me.lblCityType.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityType.Location = New System.Drawing.Point(692, 206)
-        Me.lblCityType.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCityType.Location = New System.Drawing.Point(923, 254)
         Me.lblCityType.Name = "lblCityType"
-        Me.lblCityType.Size = New System.Drawing.Size(95, 20)
+        Me.lblCityType.Size = New System.Drawing.Size(119, 25)
         Me.lblCityType.TabIndex = 3
         Me.lblCityType.Text = "City Type:"
         '
@@ -265,10 +297,10 @@ Partial Class Form1
         Me.btnRoad.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRoad.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnRoad.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRoad.Location = New System.Drawing.Point(39, 138)
-        Me.btnRoad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRoad.Location = New System.Drawing.Point(52, 170)
+        Me.btnRoad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRoad.Name = "btnRoad"
-        Me.btnRoad.Size = New System.Drawing.Size(120, 29)
+        Me.btnRoad.Size = New System.Drawing.Size(160, 36)
         Me.btnRoad.TabIndex = 3
         Me.btnRoad.Text = "Road"
         Me.btnRoad.UseVisualStyleBackColor = False
@@ -278,10 +310,9 @@ Partial Class Form1
         Me.lblBudget.AutoSize = True
         Me.lblBudget.BackColor = System.Drawing.Color.Transparent
         Me.lblBudget.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBudget.Location = New System.Drawing.Point(692, 115)
-        Me.lblBudget.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblBudget.Location = New System.Drawing.Point(923, 142)
         Me.lblBudget.Name = "lblBudget"
-        Me.lblBudget.Size = New System.Drawing.Size(78, 20)
+        Me.lblBudget.Size = New System.Drawing.Size(97, 25)
         Me.lblBudget.TabIndex = 0
         Me.lblBudget.Text = "Budget:"
         '
@@ -290,10 +321,9 @@ Partial Class Form1
         Me.lblPower.AutoSize = True
         Me.lblPower.BackColor = System.Drawing.Color.Transparent
         Me.lblPower.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPower.Location = New System.Drawing.Point(692, 147)
-        Me.lblPower.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPower.Location = New System.Drawing.Point(923, 181)
         Me.lblPower.Name = "lblPower"
-        Me.lblPower.Size = New System.Drawing.Size(118, 20)
+        Me.lblPower.Size = New System.Drawing.Size(144, 25)
         Me.lblPower.TabIndex = 1
         Me.lblPower.Text = "Total Power:"
         '
@@ -304,11 +334,11 @@ Partial Class Form1
         Me.cmbMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cmbMode.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMode.FormattingEnabled = True
-        Me.cmbMode.ItemHeight = 20
-        Me.cmbMode.Location = New System.Drawing.Point(786, 175)
-        Me.cmbMode.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbMode.ItemHeight = 25
+        Me.cmbMode.Location = New System.Drawing.Point(1048, 215)
+        Me.cmbMode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmbMode.Name = "cmbMode"
-        Me.cmbMode.Size = New System.Drawing.Size(164, 28)
+        Me.cmbMode.Size = New System.Drawing.Size(217, 33)
         Me.cmbMode.TabIndex = 1
         '
         'lblMode
@@ -316,72 +346,23 @@ Partial Class Form1
         Me.lblMode.AutoSize = True
         Me.lblMode.BackColor = System.Drawing.Color.Transparent
         Me.lblMode.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMode.Location = New System.Drawing.Point(692, 177)
-        Me.lblMode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMode.Location = New System.Drawing.Point(923, 218)
         Me.lblMode.Name = "lblMode"
-        Me.lblMode.Size = New System.Drawing.Size(61, 20)
+        Me.lblMode.Size = New System.Drawing.Size(75, 25)
         Me.lblMode.TabIndex = 2
         Me.lblMode.Text = "Mode:"
-        '
-        'btnUndobridge
-        '
-        Me.btnUndobridge.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnUndobridge.BackgroundImage = CType(resources.GetObject("btnUndobridge.BackgroundImage"), System.Drawing.Image)
-        Me.btnUndobridge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnUndobridge.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUndobridge.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnUndobridge.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUndobridge.Location = New System.Drawing.Point(39, 347)
-        Me.btnUndobridge.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnUndobridge.Name = "btnUndobridge"
-        Me.btnUndobridge.Size = New System.Drawing.Size(160, 29)
-        Me.btnUndobridge.TabIndex = 11
-        Me.btnUndobridge.Text = "Undo Bridge"
-        Me.btnUndobridge.UseVisualStyleBackColor = False
-        '
-        'btnundobuilding
-        '
-        Me.btnundobuilding.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnundobuilding.BackgroundImage = CType(resources.GetObject("btnundobuilding.BackgroundImage"), System.Drawing.Image)
-        Me.btnundobuilding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnundobuilding.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnundobuilding.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnundobuilding.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnundobuilding.Location = New System.Drawing.Point(39, 380)
-        Me.btnundobuilding.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnundobuilding.Name = "btnundobuilding"
-        Me.btnundobuilding.Size = New System.Drawing.Size(160, 29)
-        Me.btnundobuilding.TabIndex = 12
-        Me.btnundobuilding.Text = "Undo Building"
-        Me.btnundobuilding.UseVisualStyleBackColor = False
-        '
-        'btnundopowerline
-        '
-        Me.btnundopowerline.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnundopowerline.BackgroundImage = CType(resources.GetObject("btnundopowerline.BackgroundImage"), System.Drawing.Image)
-        Me.btnundopowerline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnundopowerline.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnundopowerline.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnundopowerline.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnundopowerline.Location = New System.Drawing.Point(39, 413)
-        Me.btnundopowerline.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnundopowerline.Name = "btnundopowerline"
-        Me.btnundopowerline.Size = New System.Drawing.Size(160, 29)
-        Me.btnundopowerline.TabIndex = 13
-        Me.btnundopowerline.Text = "Undo Powerline"
-        Me.btnundopowerline.UseVisualStyleBackColor = False
         '
         'Form1
         '
         Me.AcceptButton = Me.btnSimulate
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnReset
-        Me.ClientSize = New System.Drawing.Size(975, 504)
+        Me.ClientSize = New System.Drawing.Size(1300, 620)
         Me.Controls.Add(Me.pnlMapGrid)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -407,7 +388,6 @@ Partial Class Form1
     Friend WithEvents lblCityType As Label
     Friend WithEvents cmbCityType As ComboBox
     Friend WithEvents lblCityBudget As Label
-    Friend WithEvents lblMaxBuildings As Label
     Friend WithEvents BtnMenu As Button
     Friend WithEvents btnUndo As Button
     Friend WithEvents CheckBox1 As CheckBox
