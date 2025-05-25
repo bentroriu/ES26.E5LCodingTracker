@@ -265,7 +265,6 @@ Public Class Form1
 
         lblCityBudget.Text = "Budget: ₱" & cityData.budget.ToString("N0")
         lblBudget.Text = "Budget: ₱" & cityData.budget.ToString("N0")
-        lblMaxBuildings.Text = "Max Buildings: " & cityData.maxBuildings
         Roads.Clear()          ' Remove all saved Roads
         Powerlines.Clear()     ' Remove all saved elements
         Buildings.Clear()

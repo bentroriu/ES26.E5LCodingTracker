@@ -4,12 +4,11 @@
         player.PlayLooping()
         CheckBox1.Checked = True
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Form2.Show()
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged_1(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         Dim player As New System.Media.SoundPlayer(My.Resources.THEMESONG)
         If CheckBox1.Checked = True Then
             player.Play()
