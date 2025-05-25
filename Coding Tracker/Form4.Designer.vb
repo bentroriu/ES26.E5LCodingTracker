@@ -24,7 +24,8 @@ Partial Class Form4
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form4))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnMenu = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,23 +39,44 @@ Partial Class Form4
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'BtnMenu
+        'Button1
         '
-        Me.BtnMenu.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.BtnMenu.Location = New System.Drawing.Point(12, 11)
-        Me.BtnMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnMenu.Name = "BtnMenu"
-        Me.BtnMenu.Size = New System.Drawing.Size(75, 23)
-        Me.BtnMenu.TabIndex = 1
-        Me.BtnMenu.Text = "Menu"
-        Me.BtnMenu.UseVisualStyleBackColor = False
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Swis721 BlkOul BT", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(126, 60)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "MENU"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoEllipsis = True
+        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.CheckBox1.BackgroundImage = CType(resources.GetObject("CheckBox1.BackgroundImage"), System.Drawing.Image)
+        Me.CheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CheckBox1.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(1115, 12)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(159, 60)
+        Me.CheckBox1.TabIndex = 5
+        Me.CheckBox1.Text = "MUSIC"
+        Me.CheckBox1.UseVisualStyleBackColor = False
         '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1286, 555)
-        Me.Controls.Add(Me.BtnMenu)
+        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -69,5 +91,6 @@ Partial Class Form4
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents BtnMenu As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

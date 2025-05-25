@@ -233,4 +233,12 @@ Public Class Form1
         btnUndo.Enabled = Roads.Count > 0
     End Sub
 
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        Dim player As New System.Media.SoundPlayer(My.Resources.THEMESONG)
+        If CheckBox1.Checked = True Then
+            player.Play()
+        Else
+            player.Stop()
+        End If
+    End Sub
 End Class

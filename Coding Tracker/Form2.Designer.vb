@@ -28,15 +28,20 @@ Partial Class Form2
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.Honeydew
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(958, 183)
+        Me.Button2.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(958, 202)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(289, 92)
         Me.Button2.TabIndex = 1
@@ -45,10 +50,13 @@ Partial Class Form2
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.Honeydew
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(605, 345)
+        Me.Button3.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(605, 377)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(289, 92)
         Me.Button3.TabIndex = 2
@@ -57,12 +65,15 @@ Partial Class Form2
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.Honeydew
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(958, 345)
+        Me.Button4.Location = New System.Drawing.Point(958, 377)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(289, 92)
         Me.Button4.TabIndex = 3
@@ -72,13 +83,15 @@ Partial Class Form2
         'Button1
         '
         Me.Button1.AutoSize = True
-        Me.Button1.BackColor = System.Drawing.Color.Honeydew
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button1.Location = New System.Drawing.Point(605, 183)
+        Me.Button1.Location = New System.Drawing.Point(605, 202)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(289, 92)
         Me.Button1.TabIndex = 0
@@ -96,6 +109,22 @@ Partial Class Form2
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoEllipsis = True
+        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.CheckBox1.BackgroundImage = CType(resources.GetObject("CheckBox1.BackgroundImage"), System.Drawing.Image)
+        Me.CheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CheckBox1.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(1088, 53)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(159, 60)
+        Me.CheckBox1.TabIndex = 4
+        Me.CheckBox1.Text = "MUSIC"
+        Me.CheckBox1.UseVisualStyleBackColor = False
+        '
         'Form2
         '
         Me.AcceptButton = Me.Button1
@@ -103,6 +132,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Button4
         Me.ClientSize = New System.Drawing.Size(1300, 620)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -125,4 +155,5 @@ Partial Class Form2
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
