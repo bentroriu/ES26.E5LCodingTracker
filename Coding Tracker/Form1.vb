@@ -27,10 +27,10 @@ Public Class Form1
     Dim powerlineImage As Image
 
 
-    Private citySettings As New Dictionary(Of String, (budget As Double)) From {
-        {"Small Town", (100000.0)},
-        {"City", (250000.0)},
-        {"Metro City", (500000.0)}
+    Private citySettings As New Dictionary(Of String, (budget As Double) From {
+        {"Small Town", (100000)},
+        {"City", (250000)},
+        {"Metro City", (500000)}
     }
 
     ' Handlers for tool buttons now inside PictureBox (same names)

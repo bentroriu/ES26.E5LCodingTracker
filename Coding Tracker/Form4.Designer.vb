@@ -24,7 +24,6 @@ Partial Class Form4
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form4))
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,22 +43,6 @@ Partial Class Form4
         Me.Button1.Text = "MENU"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoEllipsis = True
-        Me.CheckBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.CheckBox1.BackgroundImage = CType(resources.GetObject("CheckBox1.BackgroundImage"), System.Drawing.Image)
-        Me.CheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CheckBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.CheckBox1.Font = New System.Drawing.Font("Swis721 BlkOul BT", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(1115, 17)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(159, 60)
-        Me.CheckBox1.TabIndex = 9
-        Me.CheckBox1.Text = "MUSIC"
-        Me.CheckBox1.UseVisualStyleBackColor = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
@@ -75,7 +58,6 @@ Partial Class Form4
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1286, 555)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -90,6 +72,5 @@ Partial Class Form4
 
     End Sub
     Friend WithEvents Button1 As Button
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents PictureBox1 As PictureBox
 End Class
