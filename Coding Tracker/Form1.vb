@@ -140,8 +140,8 @@ Public Class Form1
         End If
     End Sub
     Private Sub pnlmapgrid_Paint(sender As Object, e As PaintEventArgs) Handles pnlMapGrid.Paint
-        Dim RoadPen As New Pen(Color.DarkGray, 40)
-        Dim previewPen As New Pen(Color.Yellow, 40)
+        Dim RoadPen As New Pen(Color.DarkGray, 20)
+        Dim previewPen As New Pen(Color.Yellow, 20)
         For Each Road In Roads
             e.Graphics.DrawLine(RoadPen, Road.Item1, Road.Item2)
         Next
@@ -199,6 +199,15 @@ Public Class Form1
             Case 2
                 budget = 500000
         End Select
+        For Each img In houseImages
+            img.Dispose()
+        Next
+        For Each img In cityImages
+            img.Dispose()
+        Next
+        For Each img In metroImages
+            img.Dispose()
+        Next
         totalPower = 0
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
@@ -208,7 +217,11 @@ Public Class Form1
         Bridges.Clear()
         drawingRoad = False    ' Cancel any in-progress Road
         pnlMapGrid.Invalidate()
-
+        houseImages = {My.Resources.house5, My.Resources.house4, My.Resources.house1}
+        cityImages = {My.Resources.house3, My.Resources.house2, My.Resources.bldg2}
+        metroImages = {My.Resources.bldg3, My.Resources.bldg4, My.Resources.bldg5}
+        bridgeImage = My.Resources.bridge
+        powerlineImage = My.Resources.powerline
 
     End Sub
 
