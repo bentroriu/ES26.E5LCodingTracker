@@ -157,7 +157,7 @@ Partial Class Form1
         Me.lblMaxBuildings.AutoSize = True
         Me.lblMaxBuildings.BackColor = System.Drawing.Color.Transparent
         Me.lblMaxBuildings.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMaxBuildings.Location = New System.Drawing.Point(933, 338)
+        Me.lblMaxBuildings.Location = New System.Drawing.Point(923, 338)
         Me.lblMaxBuildings.Name = "lblMaxBuildings"
         Me.lblMaxBuildings.Size = New System.Drawing.Size(171, 25)
         Me.lblMaxBuildings.TabIndex = 8
@@ -184,7 +184,7 @@ Partial Class Form1
         Me.lblCityBudget.AutoSize = True
         Me.lblCityBudget.BackColor = System.Drawing.Color.Transparent
         Me.lblCityBudget.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityBudget.Location = New System.Drawing.Point(933, 295)
+        Me.lblCityBudget.Location = New System.Drawing.Point(923, 295)
         Me.lblCityBudget.Name = "lblCityBudget"
         Me.lblCityBudget.Size = New System.Drawing.Size(97, 25)
         Me.lblCityBudget.TabIndex = 7
@@ -241,7 +241,7 @@ Partial Class Form1
         Me.lblCityType.AutoSize = True
         Me.lblCityType.BackColor = System.Drawing.Color.Transparent
         Me.lblCityType.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCityType.Location = New System.Drawing.Point(933, 254)
+        Me.lblCityType.Location = New System.Drawing.Point(923, 254)
         Me.lblCityType.Name = "lblCityType"
         Me.lblCityType.Size = New System.Drawing.Size(119, 25)
         Me.lblCityType.TabIndex = 3
@@ -268,7 +268,7 @@ Partial Class Form1
         Me.lblBudget.AutoSize = True
         Me.lblBudget.BackColor = System.Drawing.Color.Transparent
         Me.lblBudget.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBudget.Location = New System.Drawing.Point(933, 142)
+        Me.lblBudget.Location = New System.Drawing.Point(923, 142)
         Me.lblBudget.Name = "lblBudget"
         Me.lblBudget.Size = New System.Drawing.Size(97, 25)
         Me.lblBudget.TabIndex = 0
@@ -279,7 +279,7 @@ Partial Class Form1
         Me.lblPower.AutoSize = True
         Me.lblPower.BackColor = System.Drawing.Color.Transparent
         Me.lblPower.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPower.Location = New System.Drawing.Point(930, 181)
+        Me.lblPower.Location = New System.Drawing.Point(923, 181)
         Me.lblPower.Name = "lblPower"
         Me.lblPower.Size = New System.Drawing.Size(144, 25)
         Me.lblPower.TabIndex = 1
@@ -304,7 +304,7 @@ Partial Class Form1
         Me.lblMode.AutoSize = True
         Me.lblMode.BackColor = System.Drawing.Color.Transparent
         Me.lblMode.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMode.Location = New System.Drawing.Point(933, 218)
+        Me.lblMode.Location = New System.Drawing.Point(923, 218)
         Me.lblMode.Name = "lblMode"
         Me.lblMode.Size = New System.Drawing.Size(75, 25)
         Me.lblMode.TabIndex = 2
