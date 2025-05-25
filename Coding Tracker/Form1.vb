@@ -157,7 +157,14 @@ Public Class Form1
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        budget = 100000
+        Select Case cmbCityType.SelectedIndex
+            Case 0
+                budget = 100000
+            Case 1
+                budget = 250000
+            Case 2
+                budget = 500000
+        End Select
         totalPower = 0
         lblBudget.Text = "Budget: ₱" & budget.ToString("N2")
         lblPower.Text = "Total Power: 0 W"
